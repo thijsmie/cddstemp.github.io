@@ -54,5 +54,6 @@ steps:
       git config --local user.name "Azure Pipelines"
       git config --local user.email "azuredevops@microsoft.com"
       git commit -m "Building static site from master commit $(Build.SourceVersion)."
+      git remote set-url origin git@github.com:thijsmie/cddstemp.github.io.git
       git push -f origin HEAD:gh-pages
     name: 'push_static_site'
