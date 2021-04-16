@@ -1,0 +1,13 @@
+.. _exhale_function_dds_8h_1ad8da7ce46558c6317d796f2cac923cd1:
+
+Function dds_write_ts
+=====================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_dds.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: dds_write_ts(dds_entity_t, const void *, dds_time_t)

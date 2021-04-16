@@ -1,0 +1,13 @@
+.. _exhale_define_dds__public__impl_8h_1ab9bb2277cce867964e06c119e87dda03:
+
+Define DDS_NOT_READ_SAMPLE_STATE
+================================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc_dds_public_impl.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: DDS_NOT_READ_SAMPLE_STATE

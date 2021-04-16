@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File dds_public_alloc.h &mdash; CycloneDDS 0.7.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File dds_public_error.h" href="dds__public__error_8h.html" />
+    <link rel="prev" title="File dds_internal_api.h" href="dds__internal__api_8h.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> CycloneDDS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/installation.html">Installing Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld.html">Building Eclipse Cyclone DDS applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld_indepth.html">Hello World! in more detail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/next_steps.html">What’s next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/uninstall.html">Uninstalling Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dds_8h.html">File dds.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__internal__api_8h.html">File dds_internal_api.h</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File dds_public_alloc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__error_8h.html">File dds_public_error.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__impl_8h.html">File dds_public_impl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__listener_8h.html">File dds_public_listener.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__qos_8h.html">File dds_public_qos.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__qosdefs_8h.html">File dds_public_qosdefs.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__status_8h.html">File dds_public_status.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__rhc_8h.html">File dds_rhc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__statistics_8h.html">File dds_statistics.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unionlist.html">Union list</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">A guide to the configuration options of Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">DDS Security</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CycloneDDS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File dds_public_alloc.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ddsc_api_docs/file/dds__public__alloc_8h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-dds-public-alloc-h">
+<h1>File dds_public_alloc.h<a class="headerlink" href="#file-dds-public-alloc-h" title="Permalink to this headline">¶</a></h1>
+<p>DDS C Allocation API. </p>
+<p>This header file defines the public API of allocation convenience functions in the Eclipse Cyclone DDS C language binding. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.DDS_FREE_KEY_BIT">
+<span class="target" id="dds__public__alloc_8h_1a0cd64765e07cf214749f3f7630dcf7bb"></span><code class="sig-name descname">DDS_FREE_KEY_BIT</code><a class="headerlink" href="#c.DDS_FREE_KEY_BIT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DDS_FREE_CONTENTS_BIT">
+<span class="target" id="dds__public__alloc_8h_1a5c7a2d1b955fd438f51c95c463ba6943"></span><code class="sig-name descname">DDS_FREE_CONTENTS_BIT</code><a class="headerlink" href="#c.DDS_FREE_CONTENTS_BIT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.DDS_FREE_ALL_BIT">
+<span class="target" id="dds__public__alloc_8h_1a698fa9d29f15b9e0ca1f081d05a1f151"></span><code class="sig-name descname">DDS_FREE_ALL_BIT</code><a class="headerlink" href="#c.DDS_FREE_ALL_BIT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Typedefs</p>
+<dl class="cpp type">
+<dt id="_CPPv415dds_allocator_t">
+<span id="_CPPv315dds_allocator_t"></span><span id="_CPPv215dds_allocator_t"></span><span id="dds_allocator_t"></span><span class="target" id="dds__public__alloc_8h_1a7d0ef6a3dda3331a10b76bfbebb24408"></span><em class="property">typedef </em><em class="property">struct</em> <a class="reference internal" href="#_CPPv413dds_allocator" title="dds_allocator">dds_allocator</a> <code class="sig-name descname">dds_allocator_t</code><a class="headerlink" href="#_CPPv415dds_allocator_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv414dds_alloc_fn_t">
+<span id="_CPPv314dds_alloc_fn_t"></span><span id="_CPPv214dds_alloc_fn_t"></span><span id="dds_alloc_fn_t"></span><span class="target" id="dds__public__alloc_8h_1a8d72fc16406792a133e32d8e6fa00f5b"></span><em class="property">typedef </em>void *(*<code class="sig-name descname">dds_alloc_fn_t</code>)<span class="sig-paren">(</span>size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414dds_alloc_fn_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv416dds_realloc_fn_t">
+<span id="_CPPv316dds_realloc_fn_t"></span><span id="_CPPv216dds_realloc_fn_t"></span><span id="dds_realloc_fn_t"></span><span class="target" id="dds__public__alloc_8h_1abb79933a24f0d16f0c5558bf5bf2380e"></span><em class="property">typedef </em>void *(*<code class="sig-name descname">dds_realloc_fn_t</code>)<span class="sig-paren">(</span>void*, size_t<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416dds_realloc_fn_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv413dds_free_fn_t">
+<span id="_CPPv313dds_free_fn_t"></span><span id="_CPPv213dds_free_fn_t"></span><span id="dds_free_fn_t"></span><span class="target" id="dds__public__alloc_8h_1af1d774192a2d06e84741b6b994b0d24c"></span><em class="property">typedef </em>void (*<code class="sig-name descname">dds_free_fn_t</code>)<span class="sig-paren">(</span>void*<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413dds_free_fn_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="cpp enum">
+<dt id="_CPPv413dds_free_op_t">
+<span id="_CPPv313dds_free_op_t"></span><span id="_CPPv213dds_free_op_t"></span><span class="target" id="dds__public__alloc_8h_1a491b266494b1ac9e6a406a227e00cb08"></span><em class="property">enum </em><code class="sig-name descname">dds_free_op_t</code><a class="headerlink" href="#_CPPv413dds_free_op_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N13dds_free_op_t12DDS_FREE_ALLE">
+<span id="_CPPv3N13dds_free_op_t12DDS_FREE_ALLE"></span><span id="_CPPv2N13dds_free_op_t12DDS_FREE_ALLE"></span><span class="target" id="dds__public__alloc_8h_1a491b266494b1ac9e6a406a227e00cb08a9d869f5fd30e41263628023633cebf8e"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_FREE_ALL</code><a class="headerlink" href="#_CPPv4N13dds_free_op_t12DDS_FREE_ALLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N13dds_free_op_t17DDS_FREE_CONTENTSE">
+<span id="_CPPv3N13dds_free_op_t17DDS_FREE_CONTENTSE"></span><span id="_CPPv2N13dds_free_op_t17DDS_FREE_CONTENTSE"></span><span class="target" id="dds__public__alloc_8h_1a491b266494b1ac9e6a406a227e00cb08a99f3eab23d97edd975c2727e56282623"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_FREE_CONTENTS</code><a class="headerlink" href="#_CPPv4N13dds_free_op_t17DDS_FREE_CONTENTSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N13dds_free_op_t12DDS_FREE_KEYE">
+<span id="_CPPv3N13dds_free_op_t12DDS_FREE_KEYE"></span><span id="_CPPv2N13dds_free_op_t12DDS_FREE_KEYE"></span><span class="target" id="dds__public__alloc_8h_1a491b266494b1ac9e6a406a227e00cb08ad2c83eefc763fe3eae68950fbf6b9945"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_FREE_KEY</code><a class="headerlink" href="#_CPPv4N13dds_free_op_t12DDS_FREE_KEYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv49dds_alloc6size_t">
+<span id="_CPPv39dds_alloc6size_t"></span><span id="_CPPv29dds_alloc6size_t"></span><span id="dds_alloc__s"></span><span class="target" id="dds__public__alloc_8h_1acf8df55b67dc5ee62f68b4960b35f175"></span>void *<code class="sig-name descname">dds_alloc</code><span class="sig-paren">(</span>size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49dds_alloc6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv411dds_reallocPv6size_t">
+<span id="_CPPv311dds_reallocPv6size_t"></span><span id="_CPPv211dds_reallocPv6size_t"></span><span id="dds_realloc__voidP.s"></span><span class="target" id="dds__public__alloc_8h_1a5ebcc54ea3f67da048e40d888a0e7ba6"></span>void *<code class="sig-name descname">dds_realloc</code><span class="sig-paren">(</span>void *<em>ptr</em>, size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411dds_reallocPv6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416dds_realloc_zeroPv6size_t">
+<span id="_CPPv316dds_realloc_zeroPv6size_t"></span><span id="_CPPv216dds_realloc_zeroPv6size_t"></span><span id="dds_realloc_zero__voidP.s"></span><span class="target" id="dds__public__alloc_8h_1aea779be3a0d013d545b311b528107af4"></span>void *<code class="sig-name descname">dds_realloc_zero</code><span class="sig-paren">(</span>void *<em>ptr</em>, size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416dds_realloc_zeroPv6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv48dds_freePv">
+<span id="_CPPv38dds_freePv"></span><span id="_CPPv28dds_freePv"></span><span id="dds_free__voidP"></span><span class="target" id="dds__public__alloc_8h_1a312a03b6db43c1ac024a85bfa7259f12"></span>void <code class="sig-name descname">dds_free</code><span class="sig-paren">(</span>void *<em>ptr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48dds_freePv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416dds_string_alloc6size_t">
+<span id="_CPPv316dds_string_alloc6size_t"></span><span id="_CPPv216dds_string_alloc6size_t"></span><span id="dds_string_alloc__s"></span><span class="target" id="dds__public__alloc_8h_1ab91fd6475a4f9358b62b8c5ce5df1f23"></span>char *<code class="sig-name descname">dds_string_alloc</code><span class="sig-paren">(</span>size_t <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416dds_string_alloc6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414dds_string_dupPKc">
+<span id="_CPPv314dds_string_dupPKc"></span><span id="_CPPv214dds_string_dupPKc"></span><span id="dds_string_dup__cCP"></span><span class="target" id="dds__public__alloc_8h_1a437221097055c8ed348c66c01edc58c8"></span>char *<code class="sig-name descname">dds_string_dup</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414dds_string_dupPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415dds_string_freePc">
+<span id="_CPPv315dds_string_freePc"></span><span id="_CPPv215dds_string_freePc"></span><span id="dds_string_free__cP"></span><span class="target" id="dds__public__alloc_8h_1adc004e81e6839c4c4b9d24e84bb153b5"></span>void <code class="sig-name descname">dds_string_free</code><span class="sig-paren">(</span>char *<em>str</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415dds_string_freePc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415dds_sample_freePvPK20dds_topic_descriptor13dds_free_op_t">
+<span id="_CPPv315dds_sample_freePvPK20dds_topic_descriptor13dds_free_op_t"></span><span id="_CPPv215dds_sample_freePvPK20dds_topic_descriptor13dds_free_op_t"></span><span id="dds_sample_free__voidP.dds_topic_descriptorCP.dds_free_op_t"></span><span class="target" id="dds__public__alloc_8h_1ae8b7a3b274aa967a81cce2eda91977fb"></span>void <code class="sig-name descname">dds_sample_free</code><span class="sig-paren">(</span>void *<em>sample</em>, <em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="dds__public__impl_8h.html#_CPPv420dds_topic_descriptor" title="dds_topic_descriptor">dds_topic_descriptor</a> *<em>desc</em>, <a class="reference internal" href="#_CPPv413dds_free_op_t" title="dds_free_op_t">dds_free_op_t</a> <em>op</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415dds_sample_freePvPK20dds_topic_descriptor13dds_free_op_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt id="_CPPv413dds_allocator">
+<span id="_CPPv313dds_allocator"></span><span id="_CPPv213dds_allocator"></span><span id="dds_allocator"></span><span class="target" id="structdds__allocator"></span><em class="property">struct </em><code class="sig-name descname">dds_allocator</code><a class="headerlink" href="#_CPPv413dds_allocator" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N13dds_allocator6mallocE">
+<span id="_CPPv3N13dds_allocator6mallocE"></span><span id="_CPPv2N13dds_allocator6mallocE"></span><span class="target" id="structdds__allocator_1aff09a0836c47d1735448055c66e0bd1a"></span>void *(*<code class="sig-name descname">malloc</code>)<span class="sig-paren">(</span>size_t size<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13dds_allocator6mallocE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N13dds_allocator7reallocE">
+<span id="_CPPv3N13dds_allocator7reallocE"></span><span id="_CPPv2N13dds_allocator7reallocE"></span><span class="target" id="structdds__allocator_1a48b6d0aff2b132f8185c9ab699160de3"></span>void *(*<code class="sig-name descname">realloc</code>)<span class="sig-paren">(</span>void *ptr, size_t size<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13dds_allocator7reallocE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N13dds_allocator4freeE">
+<span id="_CPPv3N13dds_allocator4freeE"></span><span id="_CPPv2N13dds_allocator4freeE"></span><span class="target" id="structdds__allocator_1a7034b5dc55768bfc6272bb8f87eb3ade"></span>void (*<code class="sig-name descname">free</code>)<span class="sig-paren">(</span>void *ptr<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N13dds_allocator4freeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dds__public__error_8h.html" class="btn btn-neutral float-right" title="File dds_public_error.h" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dds__internal__api_8h.html" class="btn btn-neutral float-left" title="File dds_internal_api.h" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CycloneDDS committers
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

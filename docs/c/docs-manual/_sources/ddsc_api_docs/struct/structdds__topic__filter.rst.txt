@@ -1,0 +1,5 @@
+Struct dds_topic_filter
+=======================
+
+.. doxygenstruct:: dds_topic_filter
+   :project: ddsc_api_docs

@@ -1,0 +1,5 @@
+File dds_internal_api.h
+=======================
+
+.. doxygenfile:: dds_internal_api.h
+   :project: ddsc_api_docs

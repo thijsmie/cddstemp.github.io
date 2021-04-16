@@ -1,0 +1,13 @@
+.. _exhale_define_dds_8h_1a2e88c8cf1fac5098d67e05244f69fbfa:
+
+Define DDS_REQUESTED_DEADLINE_MISSED_STATUS
+===========================================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_dds.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: DDS_REQUESTED_DEADLINE_MISSED_STATUS

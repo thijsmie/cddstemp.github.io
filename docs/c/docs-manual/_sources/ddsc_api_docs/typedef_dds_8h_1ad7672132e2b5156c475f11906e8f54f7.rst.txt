@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds_8h_1ad7672132e2b5156c475f11906e8f54f7:
+
+Typedef dds_sample_state_t
+==========================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_dds.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_sample_state_t

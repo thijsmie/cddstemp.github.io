@@ -1,0 +1,13 @@
+.. _exhale_function_dds_8h_1af4a51fbb23bd567a549de7a8ed9ff036:
+
+Function dds_begin_coherent
+===========================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_dds.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: dds_begin_coherent(dds_entity_t)

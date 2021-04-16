@@ -1,0 +1,13 @@
+.. _exhale_enum_dds__public__qosdefs_8h_1a297402b0f21a00cda5c0ce31be71fc4b:
+
+Enum dds_ownership_kind
+=======================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc_dds_public_qosdefs.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: dds_ownership_kind

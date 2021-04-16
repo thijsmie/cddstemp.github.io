@@ -1,0 +1,5 @@
+Struct dds_allocator
+====================
+
+.. doxygenstruct:: dds_allocator
+   :project: ddsc_api_docs

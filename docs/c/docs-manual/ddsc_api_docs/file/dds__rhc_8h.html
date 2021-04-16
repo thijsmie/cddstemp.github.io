@@ -1,0 +1,438 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File dds_rhc.h &mdash; CycloneDDS 0.7.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File dds_statistics.h" href="dds__statistics_8h.html" />
+    <link rel="prev" title="File dds_public_status.h" href="dds__public__status_8h.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> CycloneDDS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/installation.html">Installing Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld.html">Building Eclipse Cyclone DDS applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld_indepth.html">Hello World! in more detail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/next_steps.html">What’s next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/uninstall.html">Uninstalling Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dds_8h.html">File dds.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__internal__api_8h.html">File dds_internal_api.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__alloc_8h.html">File dds_public_alloc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__error_8h.html">File dds_public_error.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__impl_8h.html">File dds_public_impl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__listener_8h.html">File dds_public_listener.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__qos_8h.html">File dds_public_qos.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__qosdefs_8h.html">File dds_public_qosdefs.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__status_8h.html">File dds_public_status.h</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File dds_rhc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__statistics_8h.html">File dds_statistics.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unionlist.html">Union list</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">A guide to the configuration options of Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">DDS Security</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CycloneDDS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File dds_rhc.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ddsc_api_docs/file/dds__rhc_8h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-dds-rhc-h">
+<h1>File dds_rhc.h<a class="headerlink" href="#file-dds-rhc-h" title="Permalink to this headline">¶</a></h1>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.NO_STATE_MASK_SET">
+<span class="target" id="dds__rhc_8h_1a5d53740a86315bc42ea61fa353d6d108"></span><code class="sig-name descname">NO_STATE_MASK_SET</code><a class="headerlink" href="#c.NO_STATE_MASK_SET" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Typedefs</p>
+<dl class="cpp type">
+<dt id="_CPPv419dds_rhc_associate_t">
+<span id="_CPPv319dds_rhc_associate_t"></span><span id="_CPPv219dds_rhc_associate_t"></span><span id="dds_rhc_associate_t"></span><span class="target" id="dds__rhc_8h_1aab01ec3664d48504be2a984e254229a6"></span><em class="property">typedef </em>dds_return_t (*<code class="sig-name descname">dds_rhc_associate_t</code>)<span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *rhc, <em class="property">struct</em> dds_reader *reader, <em class="property">const</em> <em class="property">struct</em> ddsi_sertype *type, <em class="property">struct</em> ddsi_tkmap *tkmap<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_rhc_associate_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv419dds_rhc_read_take_t">
+<span id="_CPPv319dds_rhc_read_take_t"></span><span id="_CPPv219dds_rhc_read_take_t"></span><span id="dds_rhc_read_take_t"></span><span class="target" id="dds__rhc_8h_1a283c803daa880eb43031db9f8af833b9"></span><em class="property">typedef </em>int32_t (*<code class="sig-name descname">dds_rhc_read_take_t</code>)<span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *rhc, bool lock, void **values, <a class="reference internal" href="dds_8h.html#_CPPv417dds_sample_info_t" title="dds_sample_info_t">dds_sample_info_t</a> *info_seq, uint32_t max_samples, uint32_t mask, <a class="reference internal" href="dds__public__impl_8h.html#_CPPv421dds_instance_handle_t" title="dds_instance_handle_t">dds_instance_handle_t</a> handle, <em class="property">struct</em> dds_readcond *cond<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_rhc_read_take_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv423dds_rhc_read_take_cdr_t">
+<span id="_CPPv323dds_rhc_read_take_cdr_t"></span><span id="_CPPv223dds_rhc_read_take_cdr_t"></span><span id="dds_rhc_read_take_cdr_t"></span><span class="target" id="dds__rhc_8h_1addd458c0e9691b321dbc217509a25eee"></span><em class="property">typedef </em>int32_t (*<code class="sig-name descname">dds_rhc_read_take_cdr_t</code>)<span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *rhc, bool lock, <em class="property">struct</em> ddsi_serdata **values, <a class="reference internal" href="dds_8h.html#_CPPv417dds_sample_info_t" title="dds_sample_info_t">dds_sample_info_t</a> *info_seq, uint32_t max_samples, uint32_t sample_states, uint32_t view_states, uint32_t instance_states, <a class="reference internal" href="dds__public__impl_8h.html#_CPPv421dds_instance_handle_t" title="dds_instance_handle_t">dds_instance_handle_t</a> handle<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423dds_rhc_read_take_cdr_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv427dds_rhc_add_readcondition_t">
+<span id="_CPPv327dds_rhc_add_readcondition_t"></span><span id="_CPPv227dds_rhc_add_readcondition_t"></span><span id="dds_rhc_add_readcondition_t"></span><span class="target" id="dds__rhc_8h_1a2ab7df446352a1c4a1b45e774ce5820e"></span><em class="property">typedef </em>bool (*<code class="sig-name descname">dds_rhc_add_readcondition_t</code>)<span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *rhc, <em class="property">struct</em> dds_readcond *cond<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_rhc_add_readcondition_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv430dds_rhc_remove_readcondition_t">
+<span id="_CPPv330dds_rhc_remove_readcondition_t"></span><span id="_CPPv230dds_rhc_remove_readcondition_t"></span><span id="dds_rhc_remove_readcondition_t"></span><span class="target" id="dds__rhc_8h_1a007b66ca29c5c8b0629bc1f424b6239d"></span><em class="property">typedef </em>void (*<code class="sig-name descname">dds_rhc_remove_readcondition_t</code>)<span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *rhc, <em class="property">struct</em> dds_readcond *cond<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430dds_rhc_remove_readcondition_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv422dds_rhc_lock_samples_t">
+<span id="_CPPv322dds_rhc_lock_samples_t"></span><span id="_CPPv222dds_rhc_lock_samples_t"></span><span id="dds_rhc_lock_samples_t"></span><span class="target" id="dds__rhc_8h_1a0ae2d137a1376748d209f13a638155c2"></span><em class="property">typedef </em>uint32_t (*<code class="sig-name descname">dds_rhc_lock_samples_t</code>)<span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *rhc<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422dds_rhc_lock_samples_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv417dds_rhc_associateP7dds_rhcP10dds_readerPK12ddsi_sertypeP10ddsi_tkmap">
+<span id="_CPPv317dds_rhc_associateP7dds_rhcP10dds_readerPK12ddsi_sertypeP10ddsi_tkmap"></span><span id="_CPPv217dds_rhc_associateP7dds_rhcP10dds_readerPK12ddsi_sertypeP10ddsi_tkmap"></span><span id="dds_rhc_associate__dds_rhcP.dds_readerP.ddsi_sertypeCP.ddsi_tkmapP"></span><span class="target" id="dds__rhc_8h_1ad796d8e680757af062d56d7ebd99d61f"></span>dds_return_t <code class="sig-name descname">dds_rhc_associate</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, <em class="property">struct</em> dds_reader *<em>reader</em>, <em class="property">const</em> <em class="property">struct</em> ddsi_sertype *<em>type</em>, <em class="property">struct</em> ddsi_tkmap *<em>tkmap</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417dds_rhc_associateP7dds_rhcP10dds_readerPK12ddsi_sertypeP10ddsi_tkmap" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413dds_rhc_storeP7dds_rhcPK16ddsi_writer_infoP12ddsi_serdataP19ddsi_tkmap_instance">
+<span id="_CPPv313dds_rhc_storeP7dds_rhcPK16ddsi_writer_infoP12ddsi_serdataP19ddsi_tkmap_instance"></span><span id="_CPPv213dds_rhc_storeP7dds_rhcPK16ddsi_writer_infoP12ddsi_serdataP19ddsi_tkmap_instance"></span><span id="dds_rhc_store__dds_rhcP.ddsi_writer_infoCP.ddsi_serdataP.ddsi_tkmap_instanceP"></span><span class="target" id="dds__rhc_8h_1a3919e922dbd3f14e83808bf225d06aa4"></span>bool <code class="sig-name descname">dds_rhc_store</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, <em class="property">const</em> <em class="property">struct</em> ddsi_writer_info *<em>wrinfo</em>, <em class="property">struct</em> ddsi_serdata *<em>sample</em>, <em class="property">struct</em> ddsi_tkmap_instance *<em>tk</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413dds_rhc_storeP7dds_rhcPK16ddsi_writer_infoP12ddsi_serdataP19ddsi_tkmap_instance" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421dds_rhc_unregister_wrP7dds_rhcPK16ddsi_writer_info">
+<span id="_CPPv321dds_rhc_unregister_wrP7dds_rhcPK16ddsi_writer_info"></span><span id="_CPPv221dds_rhc_unregister_wrP7dds_rhcPK16ddsi_writer_info"></span><span id="dds_rhc_unregister_wr__dds_rhcP.ddsi_writer_infoCP"></span><span class="target" id="dds__rhc_8h_1a2ca60ce050ecb1be1f4569dfd5a5f200"></span>void <code class="sig-name descname">dds_rhc_unregister_wr</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, <em class="property">const</em> <em class="property">struct</em> ddsi_writer_info *<em>wrinfo</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421dds_rhc_unregister_wrP7dds_rhcPK16ddsi_writer_info" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv428dds_rhc_relinquish_ownershipP7dds_rhcK8uint64_t">
+<span id="_CPPv328dds_rhc_relinquish_ownershipP7dds_rhcK8uint64_t"></span><span id="_CPPv228dds_rhc_relinquish_ownershipP7dds_rhcK8uint64_t"></span><span id="dds_rhc_relinquish_ownership__dds_rhcP.uint64_tC"></span><span class="target" id="dds__rhc_8h_1a60659a18aa4cfb043903e8b1f3c60eab"></span>void <code class="sig-name descname">dds_rhc_relinquish_ownership</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, <em class="property">const</em> uint64_t <em>wr_iid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428dds_rhc_relinquish_ownershipP7dds_rhcK8uint64_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415dds_rhc_set_qosP7dds_rhcPK7dds_qos">
+<span id="_CPPv315dds_rhc_set_qosP7dds_rhcPK7dds_qos"></span><span id="_CPPv215dds_rhc_set_qosP7dds_rhcPK7dds_qos"></span><span id="dds_rhc_set_qos__dds_rhcP.dds_qosCP"></span><span class="target" id="dds__rhc_8h_1a996b4ddb3a72b95cfda5975710de1881"></span>void <code class="sig-name descname">dds_rhc_set_qos</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, <em class="property">const</em> <em class="property">struct</em> dds_qos *<em>qos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415dds_rhc_set_qosP7dds_rhcPK7dds_qos" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412dds_rhc_freeP7dds_rhc">
+<span id="_CPPv312dds_rhc_freeP7dds_rhc"></span><span id="_CPPv212dds_rhc_freeP7dds_rhc"></span><span id="dds_rhc_free__dds_rhcP"></span><span class="target" id="dds__rhc_8h_1a24152905ca184557fd35a661bfd123e5"></span>void <code class="sig-name descname">dds_rhc_free</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412dds_rhc_freeP7dds_rhc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412dds_rhc_readP7dds_rhcbPPvP17dds_sample_info_t8uint32_t8uint32_t21dds_instance_handle_tP12dds_readcond">
+<span id="_CPPv312dds_rhc_readP7dds_rhcbPPvP17dds_sample_info_t8uint32_t8uint32_t21dds_instance_handle_tP12dds_readcond"></span><span id="_CPPv212dds_rhc_readP7dds_rhcbPPvP17dds_sample_info_t8uint32_t8uint32_t21dds_instance_handle_tP12dds_readcond"></span><span id="dds_rhc_read__dds_rhcP.b.voidPP.dds_sample_info_tP.uint32_t.uint32_t.dds_instance_handle_t.dds_readcondP"></span><span class="target" id="dds__rhc_8h_1a058f09f56e06500734cff49afb263667"></span>int32_t <code class="sig-name descname">dds_rhc_read</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, bool <em>lock</em>, void **<em>values</em>, <a class="reference internal" href="dds_8h.html#_CPPv417dds_sample_info_t" title="dds_sample_info_t">dds_sample_info_t</a> *<em>info_seq</em>, uint32_t <em>max_samples</em>, uint32_t <em>mask</em>, <a class="reference internal" href="dds__public__impl_8h.html#_CPPv421dds_instance_handle_t" title="dds_instance_handle_t">dds_instance_handle_t</a> <em>handle</em>, <em class="property">struct</em> dds_readcond *<em>cond</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412dds_rhc_readP7dds_rhcbPPvP17dds_sample_info_t8uint32_t8uint32_t21dds_instance_handle_tP12dds_readcond" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412dds_rhc_takeP7dds_rhcbPPvP17dds_sample_info_t8uint32_t8uint32_t21dds_instance_handle_tP12dds_readcond">
+<span id="_CPPv312dds_rhc_takeP7dds_rhcbPPvP17dds_sample_info_t8uint32_t8uint32_t21dds_instance_handle_tP12dds_readcond"></span><span id="_CPPv212dds_rhc_takeP7dds_rhcbPPvP17dds_sample_info_t8uint32_t8uint32_t21dds_instance_handle_tP12dds_readcond"></span><span id="dds_rhc_take__dds_rhcP.b.voidPP.dds_sample_info_tP.uint32_t.uint32_t.dds_instance_handle_t.dds_readcondP"></span><span class="target" id="dds__rhc_8h_1ad7616d6165bc539633f33801dc831c79"></span>int32_t <code class="sig-name descname">dds_rhc_take</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, bool <em>lock</em>, void **<em>values</em>, <a class="reference internal" href="dds_8h.html#_CPPv417dds_sample_info_t" title="dds_sample_info_t">dds_sample_info_t</a> *<em>info_seq</em>, uint32_t <em>max_samples</em>, uint32_t <em>mask</em>, <a class="reference internal" href="dds__public__impl_8h.html#_CPPv421dds_instance_handle_t" title="dds_instance_handle_t">dds_instance_handle_t</a> <em>handle</em>, <em class="property">struct</em> dds_readcond *<em>cond</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412dds_rhc_takeP7dds_rhcbPPvP17dds_sample_info_t8uint32_t8uint32_t21dds_instance_handle_tP12dds_readcond" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415dds_rhc_readcdrP7dds_rhcbPP12ddsi_serdataP17dds_sample_info_t8uint32_t8uint32_t8uint32_t8uint32_t21dds_instance_handle_t">
+<span id="_CPPv315dds_rhc_readcdrP7dds_rhcbPP12ddsi_serdataP17dds_sample_info_t8uint32_t8uint32_t8uint32_t8uint32_t21dds_instance_handle_t"></span><span id="_CPPv215dds_rhc_readcdrP7dds_rhcbPP12ddsi_serdataP17dds_sample_info_t8uint32_t8uint32_t8uint32_t8uint32_t21dds_instance_handle_t"></span><span id="dds_rhc_readcdr__dds_rhcP.b.ddsi_serdataPP.dds_sample_info_tP.uint32_t.uint32_t.uint32_t.uint32_t.dds_instance_handle_t"></span><span class="target" id="dds__rhc_8h_1ab9f1d0df0c5b164e5fc248b9c4283161"></span>int32_t <code class="sig-name descname">dds_rhc_readcdr</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, bool <em>lock</em>, <em class="property">struct</em> ddsi_serdata **<em>values</em>, <a class="reference internal" href="dds_8h.html#_CPPv417dds_sample_info_t" title="dds_sample_info_t">dds_sample_info_t</a> *<em>info_seq</em>, uint32_t <em>max_samples</em>, uint32_t <em>sample_states</em>, uint32_t <em>view_states</em>, uint32_t <em>instance_states</em>, <a class="reference internal" href="dds__public__impl_8h.html#_CPPv421dds_instance_handle_t" title="dds_instance_handle_t">dds_instance_handle_t</a> <em>handle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415dds_rhc_readcdrP7dds_rhcbPP12ddsi_serdataP17dds_sample_info_t8uint32_t8uint32_t8uint32_t8uint32_t21dds_instance_handle_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415dds_rhc_takecdrP7dds_rhcbPP12ddsi_serdataP17dds_sample_info_t8uint32_t8uint32_t8uint32_t8uint32_t21dds_instance_handle_t">
+<span id="_CPPv315dds_rhc_takecdrP7dds_rhcbPP12ddsi_serdataP17dds_sample_info_t8uint32_t8uint32_t8uint32_t8uint32_t21dds_instance_handle_t"></span><span id="_CPPv215dds_rhc_takecdrP7dds_rhcbPP12ddsi_serdataP17dds_sample_info_t8uint32_t8uint32_t8uint32_t8uint32_t21dds_instance_handle_t"></span><span id="dds_rhc_takecdr__dds_rhcP.b.ddsi_serdataPP.dds_sample_info_tP.uint32_t.uint32_t.uint32_t.uint32_t.dds_instance_handle_t"></span><span class="target" id="dds__rhc_8h_1acb011605b44c072d5f4881a91354c959"></span>int32_t <code class="sig-name descname">dds_rhc_takecdr</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, bool <em>lock</em>, <em class="property">struct</em> ddsi_serdata **<em>values</em>, <a class="reference internal" href="dds_8h.html#_CPPv417dds_sample_info_t" title="dds_sample_info_t">dds_sample_info_t</a> *<em>info_seq</em>, uint32_t <em>max_samples</em>, uint32_t <em>sample_states</em>, uint32_t <em>view_states</em>, uint32_t <em>instance_states</em>, <a class="reference internal" href="dds__public__impl_8h.html#_CPPv421dds_instance_handle_t" title="dds_instance_handle_t">dds_instance_handle_t</a> <em>handle</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415dds_rhc_takecdrP7dds_rhcbPP12ddsi_serdataP17dds_sample_info_t8uint32_t8uint32_t8uint32_t8uint32_t21dds_instance_handle_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425dds_rhc_add_readconditionP7dds_rhcP12dds_readcond">
+<span id="_CPPv325dds_rhc_add_readconditionP7dds_rhcP12dds_readcond"></span><span id="_CPPv225dds_rhc_add_readconditionP7dds_rhcP12dds_readcond"></span><span id="dds_rhc_add_readcondition__dds_rhcP.dds_readcondP"></span><span class="target" id="dds__rhc_8h_1a4ea94a53178917eb53fd8c66065edbee"></span>bool <code class="sig-name descname">dds_rhc_add_readcondition</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, <em class="property">struct</em> dds_readcond *<em>cond</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425dds_rhc_add_readconditionP7dds_rhcP12dds_readcond" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv428dds_rhc_remove_readconditionP7dds_rhcP12dds_readcond">
+<span id="_CPPv328dds_rhc_remove_readconditionP7dds_rhcP12dds_readcond"></span><span id="_CPPv228dds_rhc_remove_readconditionP7dds_rhcP12dds_readcond"></span><span id="dds_rhc_remove_readcondition__dds_rhcP.dds_readcondP"></span><span class="target" id="dds__rhc_8h_1afb8fad57880b53cbe94f3099f945e0b3"></span>void <code class="sig-name descname">dds_rhc_remove_readcondition</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em>, <em class="property">struct</em> dds_readcond *<em>cond</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428dds_rhc_remove_readconditionP7dds_rhcP12dds_readcond" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420dds_rhc_lock_samplesP7dds_rhc">
+<span id="_CPPv320dds_rhc_lock_samplesP7dds_rhc"></span><span id="_CPPv220dds_rhc_lock_samplesP7dds_rhc"></span><span id="dds_rhc_lock_samples__dds_rhcP"></span><span class="target" id="dds__rhc_8h_1ae36ec3c19cd6ce213b449f9dec2eb684"></span>uint32_t <code class="sig-name descname">dds_rhc_lock_samples</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a> *<em>rhc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420dds_rhc_lock_samplesP7dds_rhc" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv428dds_reader_data_available_cbP10dds_reader">
+<span id="_CPPv328dds_reader_data_available_cbP10dds_reader"></span><span id="_CPPv228dds_reader_data_available_cbP10dds_reader"></span><span id="dds_reader_data_available_cb__dds_readerP"></span><span class="target" id="dds__rhc_8h_1a73bec675921a61290e7084628f79ce06"></span>void <code class="sig-name descname">dds_reader_data_available_cb</code><span class="sig-paren">(</span><em class="property">struct</em> dds_reader *<em>rd</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428dds_reader_data_available_cbP10dds_reader" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt id="_CPPv411dds_rhc_ops">
+<span id="_CPPv311dds_rhc_ops"></span><span id="_CPPv211dds_rhc_ops"></span><span id="dds_rhc_ops"></span><span class="target" id="structdds__rhc__ops"></span><em class="property">struct </em><code class="sig-name descname">dds_rhc_ops</code><a class="headerlink" href="#_CPPv411dds_rhc_ops" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N11dds_rhc_ops7rhc_opsE">
+<span id="_CPPv3N11dds_rhc_ops7rhc_opsE"></span><span id="_CPPv2N11dds_rhc_ops7rhc_opsE"></span><span id="dds_rhc_ops::rhc_ops__ddsi_rhc_ops"></span><span class="target" id="structdds__rhc__ops_1a40e1253bbf0d0221e1aff9f4552c1f4d"></span><em class="property">struct</em> ddsi_rhc_ops <code class="sig-name descname">rhc_ops</code><a class="headerlink" href="#_CPPv4N11dds_rhc_ops7rhc_opsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11dds_rhc_ops4readE">
+<span id="_CPPv3N11dds_rhc_ops4readE"></span><span id="_CPPv2N11dds_rhc_ops4readE"></span><span id="dds_rhc_ops::read__dds_rhc_read_take_t"></span><span class="target" id="structdds__rhc__ops_1a5680b75363fbed257a358daf8700368e"></span><a class="reference internal" href="#_CPPv419dds_rhc_read_take_t" title="dds_rhc_read_take_t">dds_rhc_read_take_t</a> <code class="sig-name descname">read</code><a class="headerlink" href="#_CPPv4N11dds_rhc_ops4readE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11dds_rhc_ops4takeE">
+<span id="_CPPv3N11dds_rhc_ops4takeE"></span><span id="_CPPv2N11dds_rhc_ops4takeE"></span><span id="dds_rhc_ops::take__dds_rhc_read_take_t"></span><span class="target" id="structdds__rhc__ops_1aeb47971b41e90901f70495493251fb70"></span><a class="reference internal" href="#_CPPv419dds_rhc_read_take_t" title="dds_rhc_read_take_t">dds_rhc_read_take_t</a> <code class="sig-name descname">take</code><a class="headerlink" href="#_CPPv4N11dds_rhc_ops4takeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11dds_rhc_ops7readcdrE">
+<span id="_CPPv3N11dds_rhc_ops7readcdrE"></span><span id="_CPPv2N11dds_rhc_ops7readcdrE"></span><span id="dds_rhc_ops::readcdr__dds_rhc_read_take_cdr_t"></span><span class="target" id="structdds__rhc__ops_1a1b00fdd67952889426b48d96b65bddb5"></span><a class="reference internal" href="#_CPPv423dds_rhc_read_take_cdr_t" title="dds_rhc_read_take_cdr_t">dds_rhc_read_take_cdr_t</a> <code class="sig-name descname">readcdr</code><a class="headerlink" href="#_CPPv4N11dds_rhc_ops7readcdrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11dds_rhc_ops7takecdrE">
+<span id="_CPPv3N11dds_rhc_ops7takecdrE"></span><span id="_CPPv2N11dds_rhc_ops7takecdrE"></span><span id="dds_rhc_ops::takecdr__dds_rhc_read_take_cdr_t"></span><span class="target" id="structdds__rhc__ops_1aaca606cc272ab93081bbc8720ef92582"></span><a class="reference internal" href="#_CPPv423dds_rhc_read_take_cdr_t" title="dds_rhc_read_take_cdr_t">dds_rhc_read_take_cdr_t</a> <code class="sig-name descname">takecdr</code><a class="headerlink" href="#_CPPv4N11dds_rhc_ops7takecdrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11dds_rhc_ops17add_readconditionE">
+<span id="_CPPv3N11dds_rhc_ops17add_readconditionE"></span><span id="_CPPv2N11dds_rhc_ops17add_readconditionE"></span><span id="dds_rhc_ops::add_readcondition__dds_rhc_add_readcondition_t"></span><span class="target" id="structdds__rhc__ops_1ada38b6e7b52cb67646799247b451a5ce"></span><a class="reference internal" href="#_CPPv427dds_rhc_add_readcondition_t" title="dds_rhc_add_readcondition_t">dds_rhc_add_readcondition_t</a> <code class="sig-name descname">add_readcondition</code><a class="headerlink" href="#_CPPv4N11dds_rhc_ops17add_readconditionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11dds_rhc_ops20remove_readconditionE">
+<span id="_CPPv3N11dds_rhc_ops20remove_readconditionE"></span><span id="_CPPv2N11dds_rhc_ops20remove_readconditionE"></span><span id="dds_rhc_ops::remove_readcondition__dds_rhc_remove_readcondition_t"></span><span class="target" id="structdds__rhc__ops_1a7b6b6f97a3977cbfd14b7b25ee1577a9"></span><a class="reference internal" href="#_CPPv430dds_rhc_remove_readcondition_t" title="dds_rhc_remove_readcondition_t">dds_rhc_remove_readcondition_t</a> <code class="sig-name descname">remove_readcondition</code><a class="headerlink" href="#_CPPv4N11dds_rhc_ops20remove_readconditionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11dds_rhc_ops12lock_samplesE">
+<span id="_CPPv3N11dds_rhc_ops12lock_samplesE"></span><span id="_CPPv2N11dds_rhc_ops12lock_samplesE"></span><span id="dds_rhc_ops::lock_samples__dds_rhc_lock_samples_t"></span><span class="target" id="structdds__rhc__ops_1aee399986bab3dd33f212d6c7c43e0783"></span><a class="reference internal" href="#_CPPv422dds_rhc_lock_samples_t" title="dds_rhc_lock_samples_t">dds_rhc_lock_samples_t</a> <code class="sig-name descname">lock_samples</code><a class="headerlink" href="#_CPPv4N11dds_rhc_ops12lock_samplesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N11dds_rhc_ops9associateE">
+<span id="_CPPv3N11dds_rhc_ops9associateE"></span><span id="_CPPv2N11dds_rhc_ops9associateE"></span><span id="dds_rhc_ops::associate__dds_rhc_associate_t"></span><span class="target" id="structdds__rhc__ops_1ab9dfa14848c09f50ead1827c792b0883"></span><a class="reference internal" href="#_CPPv419dds_rhc_associate_t" title="dds_rhc_associate_t">dds_rhc_associate_t</a> <code class="sig-name descname">associate</code><a class="headerlink" href="#_CPPv4N11dds_rhc_ops9associateE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt id="_CPPv47dds_rhc">
+<span id="_CPPv37dds_rhc"></span><span id="_CPPv27dds_rhc"></span><span id="dds_rhc"></span><span class="target" id="structdds__rhc"></span><em class="property">struct </em><code class="sig-name descname">dds_rhc</code><a class="headerlink" href="#_CPPv47dds_rhc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N7dds_rhc3opsE">
+<span id="_CPPv3N7dds_rhc3opsE"></span><span id="_CPPv2N7dds_rhc3opsE"></span><span id="dds_rhc::ops__dds_rhc_opsCP"></span><span class="target" id="structdds__rhc_1a9985a591de4b045b2a901d0acc83574b"></span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv411dds_rhc_ops" title="dds_rhc_ops">dds_rhc_ops</a> *<code class="sig-name descname">ops</code><a class="headerlink" href="#_CPPv4N7dds_rhc3opsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7dds_rhc3rhcE">
+<span id="_CPPv3N7dds_rhc3rhcE"></span><span id="_CPPv2N7dds_rhc3rhcE"></span><span id="dds_rhc::rhc__ddsi_rhc"></span><span class="target" id="structdds__rhc_1acbc6da422a0b7cd4d83d70405279ba77"></span><em class="property">struct</em> ddsi_rhc <code class="sig-name descname">rhc</code><a class="headerlink" href="#_CPPv4N7dds_rhc3rhcE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7dds_rhc6commonE">
+<span id="_CPPv3N7dds_rhc6commonE"></span><span id="_CPPv2N7dds_rhc6commonE"></span><span class="target" id="structdds__rhc_1aa6ae2ab120810bb3b644fa3c20a9457a"></span><em class="property">union</em> <a class="reference internal" href="#_CPPv47dds_rhc" title="dds_rhc">dds_rhc</a>::<strong>[anonymous]</strong> <code class="sig-name descname">common</code><a class="headerlink" href="#_CPPv4N7dds_rhc6commonE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dds__statistics_8h.html" class="btn btn-neutral float-right" title="File dds_statistics.h" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dds__public__status_8h.html" class="btn btn-neutral float-left" title="File dds_public_status.h" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CycloneDDS committers
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

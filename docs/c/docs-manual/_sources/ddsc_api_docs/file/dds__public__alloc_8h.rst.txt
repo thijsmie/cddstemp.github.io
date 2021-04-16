@@ -1,0 +1,5 @@
+File dds_public_alloc.h
+=======================
+
+.. doxygenfile:: dds_public_alloc.h
+   :project: ddsc_api_docs

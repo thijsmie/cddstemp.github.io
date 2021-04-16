@@ -1,0 +1,20 @@
+.. _dir__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include:
+
+
+Directory include
+=================
+
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc>` (``/mnt/m/Libraries/Projects/CyclonePlayground/cyclonedds-fork/src/core/ddsc``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``/mnt/m/Libraries/Projects/CyclonePlayground/cyclonedds-fork/src/core/ddsc/include``
+
+Subdirectories
+--------------
+
+- :ref:`dir__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds`
+
+
+

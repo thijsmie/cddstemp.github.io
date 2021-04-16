@@ -1,0 +1,5 @@
+Struct dds_stat_keyvalue
+========================
+
+.. doxygenstruct:: dds_stat_keyvalue
+   :project: ddsc_api_docs

@@ -1,0 +1,165 @@
+
+.. _file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc_dds_public_impl.h:
+
+File dds_public_impl.h
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc>` (``/mnt/m/Libraries/Projects/CyclonePlayground/cyclonedds-fork/src/core/ddsc/include/dds/ddsc``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+DDS C Implementation API. 
+ 
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``/mnt/m/Libraries/Projects/CyclonePlayground/cyclonedds-fork/src/core/ddsc/include/dds/ddsc/dds_public_impl.h``)
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc_dds_public_impl.h.rst
+
+
+
+Detailed Description
+--------------------
+
+This header file defines the public API for all kinds of things in the Eclipse Cyclone DDS C language binding. 
+
+
+
+Includes
+--------
+
+
+- ``dds/ddsc/dds_public_alloc.h`` (:ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc_dds_public_alloc.h`)
+
+- ``dds/export.h``
+
+- ``stdbool.h``
+
+- ``stdint.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_dds.h`
+
+- :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc_dds_public_listener.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structdds__key__descriptor`
+
+- :ref:`exhale_struct_structdds__sequence`
+
+- :ref:`exhale_struct_structdds__topic__descriptor`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_dds__public__impl_8h_1a95025da70d4d5b7c257e4f84394c094a`
+
+- :ref:`exhale_enum_dds__public__impl_8h_1a3408a192a4fba825f21d27a5a0fe0bb1`
+
+- :ref:`exhale_enum_dds__public__impl_8h_1ab19b84d834bb7c98851067947cd23f0b`
+
+- :ref:`exhale_enum_dds__public__impl_8h_1ae71ade828fcfb6d53a96b2aa5f29463f`
+
+- :ref:`exhale_enum_dds__public__impl_8h_1a3faf85df9d59249c7b31fddded55d277`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_dds__public__impl_8h_1a7fb577dda0b862f4e755f771f2953e4a`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_dds__public__impl_8h_1a49ffb616400230ddec0977634861eea2`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a300c5bf2a8d288b7cc5813b97e097693`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a5e04489490ba7af47777a324003d7b1e`
+
+- :ref:`exhale_define_dds__public__impl_8h_1ae8c120921e70d808d411246131cd8596`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a5c19adef721389d74f6871d43849e588`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a8939c3899588c99806b7bd7cf62181e5`
+
+- :ref:`exhale_define_dds__public__impl_8h_1aa416fd2f593852b263bf386709055ec2`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a9170b472f7ae56323bf23dbcda606716`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a2542f6f54c3624eaa01cbd12a449f6b4`
+
+- :ref:`exhale_define_dds__public__impl_8h_1ae340e1814d006f40b2ca474dcddb7f20`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a8c03ae9985cae84d2dfdec294895fac7`
+
+- :ref:`exhale_define_dds__public__impl_8h_1aee526d254d9d80a7d24ab99a19f8ece9`
+
+- :ref:`exhale_define_dds__public__impl_8h_1add16f326b18a0c7cf4e0b094c4fcf886`
+
+- :ref:`exhale_define_dds__public__impl_8h_1ab9bb2277cce867964e06c119e87dda03`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a4a84fbcad72f522504d69d434a738ea9`
+
+- :ref:`exhale_define_dds__public__impl_8h_1ad19c5a08c2ef8dc5b5ef027b349948e3`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a760ca205c759e43609eccc88415e6dcb`
+
+- :ref:`exhale_define_dds__public__impl_8h_1ae91d07f3c6d96a96ca9165cc54b92e60`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a75ab448a9fef0cfbe3e6da9e10a38f16`
+
+- :ref:`exhale_define_dds__public__impl_8h_1aa2392bf2b06a3c3ca67d6c318b33310d`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a8bcc3b3be2b17f0d7f19a61fb5b82cfe`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a5c3d78742cc81008a866254d50f66f4c`
+
+- :ref:`exhale_define_dds__public__impl_8h_1ac63d9fab402d9650b872c55f5fcdc059`
+
+- :ref:`exhale_define_dds__public__impl_8h_1a944a56d726a95d52e6db182bb24debdd`
+
+- :ref:`exhale_define_dds__public__impl_8h_1af3dfc8c311c9acda1a7baac9f9812d22`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_dds__public__impl_8h_1aa5d96fb7c69c5503252549cd415d4582`
+
+- :ref:`exhale_typedef_dds__public__impl_8h_1ab6021cecab509f19b79fdf7f62fe5758`
+
+- :ref:`exhale_typedef_dds__public__impl_8h_1a004163125a23f123c14cedbe5a237906`
+
+- :ref:`exhale_typedef_dds__public__impl_8h_1a0f090ef154ef8edd61fc543a41b9dd4a`
+
+- :ref:`exhale_typedef_dds__public__impl_8h_1abe151361fd19ec98451ed554f6df06d3`
+
+- :ref:`exhale_typedef_dds__public__impl_8h_1a165e483ebf4d09a554a715a95c49f1f0`
+

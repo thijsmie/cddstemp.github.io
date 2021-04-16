@@ -1,0 +1,13 @@
+.. _exhale_enum_dds__public__impl_8h_1a3faf85df9d59249c7b31fddded55d277:
+
+Enum dds_stream_typecode_subtype
+================================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc_dds_public_impl.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: dds_stream_typecode_subtype

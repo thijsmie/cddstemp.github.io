@@ -1,0 +1,13 @@
+.. _exhale_function_dds_8h_1ac2932cfcadd96f7817ccd4502eada928:
+
+Function dds_unregister_instance_ih_ts
+======================================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_dds.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: dds_unregister_instance_ih_ts(dds_entity_t, dds_instance_handle_t, dds_time_t)

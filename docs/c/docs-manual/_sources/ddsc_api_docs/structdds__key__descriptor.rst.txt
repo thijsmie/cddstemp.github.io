@@ -1,0 +1,16 @@
+.. _exhale_struct_structdds__key__descriptor:
+
+Struct dds_key_descriptor
+=========================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc_dds_public_impl.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: dds_key_descriptor
+   :members:
+   :protected-members:
+   :undoc-members:

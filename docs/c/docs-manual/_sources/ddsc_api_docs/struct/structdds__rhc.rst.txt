@@ -1,0 +1,5 @@
+Struct dds_rhc
+==============
+
+.. doxygenstruct:: dds_rhc
+   :project: ddsc_api_docs

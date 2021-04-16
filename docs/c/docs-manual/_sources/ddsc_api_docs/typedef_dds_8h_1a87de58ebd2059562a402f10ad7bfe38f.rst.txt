@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds_8h_1a87de58ebd2059562a402f10ad7bfe38f:
+
+Typedef dds_instance_state_t
+============================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_dds.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_instance_state_t

@@ -1,0 +1,13 @@
+.. _exhale_function_dds_8h_1ab7f4d847f6f2dc89af86c6b108d50847:
+
+Function dds_read_wl
+====================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_dds.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: dds_read_wl(dds_entity_t, void **, dds_sample_info_t *, uint32_t)

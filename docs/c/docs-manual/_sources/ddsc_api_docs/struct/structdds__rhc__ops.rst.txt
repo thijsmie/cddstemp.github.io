@@ -1,0 +1,5 @@
+Struct dds_rhc_ops
+==================
+
+.. doxygenstruct:: dds_rhc_ops
+   :project: ddsc_api_docs

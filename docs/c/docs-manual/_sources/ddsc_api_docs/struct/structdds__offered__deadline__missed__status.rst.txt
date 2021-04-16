@@ -1,0 +1,5 @@
+Struct dds_offered_deadline_missed_status
+=========================================
+
+.. doxygenstruct:: dds_offered_deadline_missed_status
+   :project: ddsc_api_docs

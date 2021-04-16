@@ -1,0 +1,1237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File dds_public_qos.h &mdash; CycloneDDS 0.7.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File dds_public_qosdefs.h" href="dds__public__qosdefs_8h.html" />
+    <link rel="prev" title="File dds_public_listener.h" href="dds__public__listener_8h.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> CycloneDDS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/installation.html">Installing Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld.html">Building Eclipse Cyclone DDS applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld_indepth.html">Hello World! in more detail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/next_steps.html">What’s next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/uninstall.html">Uninstalling Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dds_8h.html">File dds.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__internal__api_8h.html">File dds_internal_api.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__alloc_8h.html">File dds_public_alloc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__error_8h.html">File dds_public_error.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__impl_8h.html">File dds_public_impl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__listener_8h.html">File dds_public_listener.h</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File dds_public_qos.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__qosdefs_8h.html">File dds_public_qosdefs.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__status_8h.html">File dds_public_status.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__rhc_8h.html">File dds_rhc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__statistics_8h.html">File dds_statistics.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unionlist.html">Union list</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">A guide to the configuration options of Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">DDS Security</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CycloneDDS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File dds_public_qos.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ddsc_api_docs/file/dds__public__qos_8h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-dds-public-qos-h">
+<h1>File dds_public_qos.h<a class="headerlink" href="#file-dds-public-qos-h" title="Permalink to this headline">¶</a></h1>
+<p>DDS C QoS API. </p>
+<p>This header file defines the public API of QoS and Policies in the Eclipse Cyclone DDS C language binding. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.DDS_HAS_PROPERTY_LIST_QOS">
+<span class="target" id="dds__public__qos_8h_1a660a075652c311b2904ccc78063f3756"></span><code class="sig-name descname">DDS_HAS_PROPERTY_LIST_QOS</code><a class="headerlink" href="#c.DDS_HAS_PROPERTY_LIST_QOS" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv414dds_create_qosv">
+<span id="_CPPv314dds_create_qosv"></span><span id="_CPPv214dds_create_qosv"></span><span id="dds_create_qos__void"></span><span class="target" id="dds__public__qos_8h_1ab736e22ef21e2c9f576be32ce99a2087"></span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<code class="sig-name descname">dds_create_qos</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414dds_create_qosv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Allocate memory and initialize default QoS-policies. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- Pointer to the initialized dds_qos_t structure, NULL if unsuccessful. </p>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414dds_qos_createv">
+<span id="_CPPv314dds_qos_createv"></span><span id="_CPPv214dds_qos_createv"></span><span id="dds_qos_create__void"></span><span class="target" id="dds__public__qos_8h_1a0fe4b53c1c98106de5c1fa2198ac9d8b"></span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<code class="sig-name descname">dds_qos_create</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414dds_qos_createv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414dds_delete_qosP9dds_qos_t">
+<span id="_CPPv314dds_delete_qosP9dds_qos_t"></span><span id="_CPPv214dds_delete_qosP9dds_qos_t"></span><span id="dds_delete_qos__dds_qos_tP"></span><span class="target" id="dds__public__qos_8h_1a2c6d1492504a2d70beec66335dc9d08d"></span>void <code class="sig-name descname">dds_delete_qos</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414dds_delete_qosP9dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Delete memory allocated to QoS-policies structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to dds_qos_t structure </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414dds_qos_deleteP9dds_qos_t">
+<span id="_CPPv314dds_qos_deleteP9dds_qos_t"></span><span id="_CPPv214dds_qos_deleteP9dds_qos_t"></span><span id="dds_qos_delete__dds_qos_tP"></span><span class="target" id="dds__public__qos_8h_1aa5f12ecebcfc3e832c97910c1ffa2adb"></span>void <code class="sig-name descname">dds_qos_delete</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414dds_qos_deleteP9dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413dds_reset_qosP9dds_qos_t">
+<span id="_CPPv313dds_reset_qosP9dds_qos_t"></span><span id="_CPPv213dds_reset_qosP9dds_qos_t"></span><span id="dds_reset_qos__dds_qos_tP"></span><span class="target" id="dds__public__qos_8h_1a548300984a6fecc95e75e340ec891883"></span>void <code class="sig-name descname">dds_reset_qos</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413dds_reset_qosP9dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset a QoS-policies structure to default values. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to the dds_qos_t structure </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413dds_qos_resetP9dds_qos_t">
+<span id="_CPPv313dds_qos_resetP9dds_qos_t"></span><span id="_CPPv213dds_qos_resetP9dds_qos_t"></span><span id="dds_qos_reset__dds_qos_tP"></span><span class="target" id="dds__public__qos_8h_1ae8353ab5c091cabcb234f662cc2aacd9"></span>void <code class="sig-name descname">dds_qos_reset</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413dds_qos_resetP9dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412dds_copy_qosP9dds_qos_tPK9dds_qos_t">
+<span id="_CPPv312dds_copy_qosP9dds_qos_tPK9dds_qos_t"></span><span id="_CPPv212dds_copy_qosP9dds_qos_tPK9dds_qos_t"></span><span id="dds_copy_qos__dds_qos_tP.dds_qos_tCP"></span><span class="target" id="dds__public__qos_8h_1a090a023fe04a46975be7e807065bee80"></span>dds_return_t <code class="sig-name descname">dds_copy_qos</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>dst</em>, <em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412dds_copy_qosP9dds_qos_tPK9dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy all QoS-policies from one structure to another. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- Return-code indicating success or failure </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">dst</span></code>: - Pointer to the destination dds_qos_t structure </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">src</span></code>: - Pointer to the source dds_qos_t structure</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv412dds_qos_copyP9dds_qos_tPK9dds_qos_t">
+<span id="_CPPv312dds_qos_copyP9dds_qos_tPK9dds_qos_t"></span><span id="_CPPv212dds_qos_copyP9dds_qos_tPK9dds_qos_t"></span><span id="dds_qos_copy__dds_qos_tP.dds_qos_tCP"></span><span class="target" id="dds__public__qos_8h_1ab9b4e5016ab441c55833cb17e02bc0c2"></span>dds_return_t <code class="sig-name descname">dds_qos_copy</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>dst</em>, <em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412dds_qos_copyP9dds_qos_tPK9dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413dds_merge_qosP9dds_qos_tPK9dds_qos_t">
+<span id="_CPPv313dds_merge_qosP9dds_qos_tPK9dds_qos_t"></span><span id="_CPPv213dds_merge_qosP9dds_qos_tPK9dds_qos_t"></span><span id="dds_merge_qos__dds_qos_tP.dds_qos_tCP"></span><span class="target" id="dds__public__qos_8h_1a639a02c7c517691c8e6e6addab0154e7"></span>void <code class="sig-name descname">dds_merge_qos</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>dst</em>, <em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413dds_merge_qosP9dds_qos_tPK9dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy all QoS-policies from one structure to another, unless already set. </p>
+<p>Policies are copied from src to dst, unless src already has the policy set to a non-default value.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">dst</span></code>: - Pointer to the destination qos structure </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">src</span></code>: - Pointer to the source qos structure </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413dds_qos_mergeP9dds_qos_tPK9dds_qos_t">
+<span id="_CPPv313dds_qos_mergeP9dds_qos_tPK9dds_qos_t"></span><span id="_CPPv213dds_qos_mergeP9dds_qos_tPK9dds_qos_t"></span><span id="dds_qos_merge__dds_qos_tP.dds_qos_tCP"></span><span class="target" id="dds__public__qos_8h_1a85ba30dc5655af4a6001ff7c00259b08"></span>void <code class="sig-name descname">dds_qos_merge</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>dst</em>, <em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413dds_qos_mergeP9dds_qos_tPK9dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413dds_qos_equalPK9dds_qos_tPK9dds_qos_t">
+<span id="_CPPv313dds_qos_equalPK9dds_qos_tPK9dds_qos_t"></span><span id="_CPPv213dds_qos_equalPK9dds_qos_tPK9dds_qos_t"></span><span id="dds_qos_equal__dds_qos_tCP.dds_qos_tCP"></span><span class="target" id="dds__public__qos_8h_1a0cc3039c0c42af5c931099f178e93707"></span>bool <code class="sig-name descname">dds_qos_equal</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>a</em>, <em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>b</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413dds_qos_equalPK9dds_qos_tPK9dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy all QoS-policies from one structure to another, unless already set. </p>
+<p>Policies are copied from src to dst, unless src already has the policy set to a non-default value.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">a</span></code>: - Pointer to the destination qos structure </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">b</span></code>: - Pointer to the source qos structure </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417dds_qset_userdataP9dds_qos_tPKv6size_t">
+<span id="_CPPv317dds_qset_userdataP9dds_qos_tPKv6size_t"></span><span id="_CPPv217dds_qset_userdataP9dds_qos_tPKv6size_t"></span><span id="dds_qset_userdata__dds_qos_tP.voidCP.s"></span><span class="target" id="dds__public__qos_8h_1ae1701a61bc179f4062827b5a3e9ae6f9"></span>void <code class="sig-name descname">dds_qset_userdata</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> void *<em>value</em>, size_t <em>sz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417dds_qset_userdataP9dds_qos_tPKv6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the userdata of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the userdata </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">value</span></code>: - Pointer to the userdata </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sz</span></code>: - Size of userdata stored in value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_qset_topicdataP9dds_qos_tPKv6size_t">
+<span id="_CPPv318dds_qset_topicdataP9dds_qos_tPKv6size_t"></span><span id="_CPPv218dds_qset_topicdataP9dds_qos_tPKv6size_t"></span><span id="dds_qset_topicdata__dds_qos_tP.voidCP.s"></span><span class="target" id="dds__public__qos_8h_1a5106489fb2567940fb363c7927c054bf"></span>void <code class="sig-name descname">dds_qset_topicdata</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> void *<em>value</em>, size_t <em>sz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_qset_topicdataP9dds_qos_tPKv6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the topicdata of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the topicdata </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">value</span></code>: - Pointer to the topicdata </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sz</span></code>: - Size of the topicdata stored in value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_qset_groupdataP9dds_qos_tPKv6size_t">
+<span id="_CPPv318dds_qset_groupdataP9dds_qos_tPKv6size_t"></span><span id="_CPPv218dds_qset_groupdataP9dds_qos_tPKv6size_t"></span><span id="dds_qset_groupdata__dds_qos_tP.voidCP.s"></span><span class="target" id="dds__public__qos_8h_1a32ec0b5a69cae74a0d4f2843742a5e8e"></span>void <code class="sig-name descname">dds_qset_groupdata</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> void *<em>value</em>, size_t <em>sz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_qset_groupdataP9dds_qos_tPKv6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the groupdata of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the groupdata </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">value</span></code>: - Pointer to the group data </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sz</span></code>: - Size of groupdata stored in value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419dds_qset_durabilityP9dds_qos_t21dds_durability_kind_t">
+<span id="_CPPv319dds_qset_durabilityP9dds_qos_t21dds_durability_kind_t"></span><span id="_CPPv219dds_qset_durabilityP9dds_qos_t21dds_durability_kind_t"></span><span id="dds_qset_durability__dds_qos_tP.dds_durability_kind_t"></span><span class="target" id="dds__public__qos_8h_1ab22394091cfed2bee05c93ce04c1ae05"></span>void <code class="sig-name descname">dds_qset_durability</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv421dds_durability_kind_t" title="dds_durability_kind_t">dds_durability_kind_t</a> <em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_qset_durabilityP9dds_qos_t21dds_durability_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the durability policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">kind</span></code>: - Durability kind value DCPS_QoS_Durability </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416dds_qset_historyP9dds_qos_t18dds_history_kind_t7int32_t">
+<span id="_CPPv316dds_qset_historyP9dds_qos_t18dds_history_kind_t7int32_t"></span><span id="_CPPv216dds_qset_historyP9dds_qos_t18dds_history_kind_t7int32_t"></span><span id="dds_qset_history__dds_qos_tP.dds_history_kind_t.int32_t"></span><span class="target" id="dds__public__qos_8h_1add2aced60f8c7a509b8b7b85809c1402"></span>void <code class="sig-name descname">dds_qset_history</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv418dds_history_kind_t" title="dds_history_kind_t">dds_history_kind_t</a> <em>kind</em>, int32_t <em>depth</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416dds_qset_historyP9dds_qos_t18dds_history_kind_t7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the history policy of a qos structure. </p>
+<p>Note that depth is only relevant for keep last. If you want limited history for keep all, use <a class="reference internal" href="#dds__public__qos_8h_1a9ae73da0f7b76046e1a0a355c18c3690"><span class="std std-ref">dds_qset_resource_limits()</span></a>.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">kind</span></code>: - History kind value DCPS_QoS_History </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">depth</span></code>: - History depth value DCPS_QoS_History </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424dds_qset_resource_limitsP9dds_qos_t7int32_t7int32_t7int32_t">
+<span id="_CPPv324dds_qset_resource_limitsP9dds_qos_t7int32_t7int32_t7int32_t"></span><span id="_CPPv224dds_qset_resource_limitsP9dds_qos_t7int32_t7int32_t7int32_t"></span><span id="dds_qset_resource_limits__dds_qos_tP.int32_t.int32_t.int32_t"></span><span class="target" id="dds__public__qos_8h_1a9ae73da0f7b76046e1a0a355c18c3690"></span>void <code class="sig-name descname">dds_qset_resource_limits</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, int32_t <em>max_samples</em>, int32_t <em>max_instances</em>, int32_t <em>max_samples_per_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424dds_qset_resource_limitsP9dds_qos_t7int32_t7int32_t7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the resource limits policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">max_samples</span></code>: - Number of samples resource-limit value </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">max_instances</span></code>: - Number of instances resource-limit value </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">max_samples_per_instance</span></code>: - Number of samples per instance resource-limit value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421dds_qset_presentationP9dds_qos_t36dds_presentation_access_scope_kind_tbb">
+<span id="_CPPv321dds_qset_presentationP9dds_qos_t36dds_presentation_access_scope_kind_tbb"></span><span id="_CPPv221dds_qset_presentationP9dds_qos_t36dds_presentation_access_scope_kind_tbb"></span><span id="dds_qset_presentation__dds_qos_tP.dds_presentation_access_scope_kind_t.b.b"></span><span class="target" id="dds__public__qos_8h_1a12638fbf1f68decdfff022d8713865ff"></span>void <code class="sig-name descname">dds_qset_presentation</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv436dds_presentation_access_scope_kind_t" title="dds_presentation_access_scope_kind_t">dds_presentation_access_scope_kind_t</a> <em>access_scope</em>, bool <em>coherent_access</em>, bool <em>ordered_access</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421dds_qset_presentationP9dds_qos_t36dds_presentation_access_scope_kind_tbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the presentation policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">access_scope</span></code>: - Access-scope kind </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">coherent_access</span></code>: - Coherent access enable value </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ordered_access</span></code>: - Ordered access enable value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417dds_qset_lifespanP9dds_qos_t14dds_duration_t">
+<span id="_CPPv317dds_qset_lifespanP9dds_qos_t14dds_duration_t"></span><span id="_CPPv217dds_qset_lifespanP9dds_qos_t14dds_duration_t"></span><span id="dds_qset_lifespan__dds_qos_tP.dds_duration_t"></span><span class="target" id="dds__public__qos_8h_1af8ae933877645133ff1c28d769b48ccc"></span>void <code class="sig-name descname">dds_qset_lifespan</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t <em>lifespan</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417dds_qset_lifespanP9dds_qos_t14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the lifespan policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">lifespan</span></code>: - Lifespan duration (expiration time relative to source timestamp of a sample) </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417dds_qset_deadlineP9dds_qos_t14dds_duration_t">
+<span id="_CPPv317dds_qset_deadlineP9dds_qos_t14dds_duration_t"></span><span id="_CPPv217dds_qset_deadlineP9dds_qos_t14dds_duration_t"></span><span id="dds_qset_deadline__dds_qos_tP.dds_duration_t"></span><span class="target" id="dds__public__qos_8h_1aa3eb149709214e5cb9cf749947f7e3de"></span>void <code class="sig-name descname">dds_qset_deadline</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t <em>deadline</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417dds_qset_deadlineP9dds_qos_t14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the deadline policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">deadline</span></code>: - Deadline duration </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423dds_qset_latency_budgetP9dds_qos_t14dds_duration_t">
+<span id="_CPPv323dds_qset_latency_budgetP9dds_qos_t14dds_duration_t"></span><span id="_CPPv223dds_qset_latency_budgetP9dds_qos_t14dds_duration_t"></span><span id="dds_qset_latency_budget__dds_qos_tP.dds_duration_t"></span><span class="target" id="dds__public__qos_8h_1ac8b19beaac9ca07da42ea4ff7c77ca31"></span>void <code class="sig-name descname">dds_qset_latency_budget</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t <em>duration</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423dds_qset_latency_budgetP9dds_qos_t14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the latency-budget policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">duration</span></code>: - Latency budget duration </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_qset_ownershipP9dds_qos_t20dds_ownership_kind_t">
+<span id="_CPPv318dds_qset_ownershipP9dds_qos_t20dds_ownership_kind_t"></span><span id="_CPPv218dds_qset_ownershipP9dds_qos_t20dds_ownership_kind_t"></span><span id="dds_qset_ownership__dds_qos_tP.dds_ownership_kind_t"></span><span class="target" id="dds__public__qos_8h_1a2ee03b9551df5f88c81735109e0a0578"></span>void <code class="sig-name descname">dds_qset_ownership</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv420dds_ownership_kind_t" title="dds_ownership_kind_t">dds_ownership_kind_t</a> <em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_qset_ownershipP9dds_qos_t20dds_ownership_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the ownership policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">kind</span></code>: - Ownership kind </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_qset_ownership_strengthP9dds_qos_t7int32_t">
+<span id="_CPPv327dds_qset_ownership_strengthP9dds_qos_t7int32_t"></span><span id="_CPPv227dds_qset_ownership_strengthP9dds_qos_t7int32_t"></span><span id="dds_qset_ownership_strength__dds_qos_tP.int32_t"></span><span class="target" id="dds__public__qos_8h_1afeb5f6405805fa971a12a6ec98492a67"></span>void <code class="sig-name descname">dds_qset_ownership_strength</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, int32_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_qset_ownership_strengthP9dds_qos_t7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the ownership strength policy of a qos structure. </p>
+<p>param[in,out] qos - Pointer to a dds_qos_t structure that will store the policy param[in] value - Ownership strength value </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419dds_qset_livelinessP9dds_qos_t21dds_liveliness_kind_t14dds_duration_t">
+<span id="_CPPv319dds_qset_livelinessP9dds_qos_t21dds_liveliness_kind_t14dds_duration_t"></span><span id="_CPPv219dds_qset_livelinessP9dds_qos_t21dds_liveliness_kind_t14dds_duration_t"></span><span id="dds_qset_liveliness__dds_qos_tP.dds_liveliness_kind_t.dds_duration_t"></span><span class="target" id="dds__public__qos_8h_1a20283b5eaf7c1f7f9cb46d40d544f76a"></span>void <code class="sig-name descname">dds_qset_liveliness</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv421dds_liveliness_kind_t" title="dds_liveliness_kind_t">dds_liveliness_kind_t</a> <em>kind</em>, dds_duration_t <em>lease_duration</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_qset_livelinessP9dds_qos_t21dds_liveliness_kind_t14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the liveliness policy of a qos structure. </p>
+<p>param[in,out] qos - Pointer to a dds_qos_t structure that will store the policy param[in] kind - Liveliness kind param[in[ lease_duration - Lease duration </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426dds_qset_time_based_filterP9dds_qos_t14dds_duration_t">
+<span id="_CPPv326dds_qset_time_based_filterP9dds_qos_t14dds_duration_t"></span><span id="_CPPv226dds_qset_time_based_filterP9dds_qos_t14dds_duration_t"></span><span id="dds_qset_time_based_filter__dds_qos_tP.dds_duration_t"></span><span class="target" id="dds__public__qos_8h_1a54995f432ddd5a3597fe8a30d20cd14e"></span>void <code class="sig-name descname">dds_qset_time_based_filter</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t <em>minimum_separation</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426dds_qset_time_based_filterP9dds_qos_t14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the time-based filter policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">minimum_separation</span></code>: - Minimum duration between sample delivery for an instance </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_qset_partitionP9dds_qos_t8uint32_tPPKc">
+<span id="_CPPv318dds_qset_partitionP9dds_qos_t8uint32_tPPKc"></span><span id="_CPPv218dds_qset_partitionP9dds_qos_t8uint32_tPPKc"></span><span id="dds_qset_partition__dds_qos_tP.uint32_t.cCPP"></span><span class="target" id="dds__public__qos_8h_1a8831f25c1a3eceb392dd93e6aece557c"></span>void <code class="sig-name descname">dds_qset_partition</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, uint32_t <em>n</em>, <em class="property">const</em> char **<em>ps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_qset_partitionP9dds_qos_t8uint32_tPPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the partition policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">n</span></code>: - Number of partitions stored in ps </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ps</span></code>: - Pointer to string(s) storing partition name(s) </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419dds_qset_partition1P9dds_qos_tPKc">
+<span id="_CPPv319dds_qset_partition1P9dds_qos_tPKc"></span><span id="_CPPv219dds_qset_partition1P9dds_qos_tPKc"></span><span id="dds_qset_partition1__dds_qos_tP.cCP"></span><span class="target" id="dds__public__qos_8h_1af67900cd9fe906bfd5eb633506cb7e59"></span>void <code class="sig-name descname">dds_qset_partition1</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> char *<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_qset_partition1P9dds_qos_tPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convenience function to set the partition policy of a qos structure to a single name. Name may be a null pointer. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">name</span></code>: - Pointer to the name </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420dds_qset_reliabilityP9dds_qos_t22dds_reliability_kind_t14dds_duration_t">
+<span id="_CPPv320dds_qset_reliabilityP9dds_qos_t22dds_reliability_kind_t14dds_duration_t"></span><span id="_CPPv220dds_qset_reliabilityP9dds_qos_t22dds_reliability_kind_t14dds_duration_t"></span><span id="dds_qset_reliability__dds_qos_tP.dds_reliability_kind_t.dds_duration_t"></span><span class="target" id="dds__public__qos_8h_1adcc4186f442a3dddedbd277c3e87d93d"></span>void <code class="sig-name descname">dds_qset_reliability</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv422dds_reliability_kind_t" title="dds_reliability_kind_t">dds_reliability_kind_t</a> <em>kind</em>, dds_duration_t <em>max_blocking_time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420dds_qset_reliabilityP9dds_qos_t22dds_reliability_kind_t14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the reliability policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">kind</span></code>: - Reliability kind </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">max_blocking_time</span></code>: - Max blocking duration applied when kind is reliable. This is how long the writer will block when its history is full. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_qset_transport_priorityP9dds_qos_t7int32_t">
+<span id="_CPPv327dds_qset_transport_priorityP9dds_qos_t7int32_t"></span><span id="_CPPv227dds_qset_transport_priorityP9dds_qos_t7int32_t"></span><span id="dds_qset_transport_priority__dds_qos_tP.int32_t"></span><span class="target" id="dds__public__qos_8h_1a590958ddac3cbbe03545f0e94f77c93d"></span>void <code class="sig-name descname">dds_qset_transport_priority</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, int32_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_qset_transport_priorityP9dds_qos_t7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the transport-priority policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">value</span></code>: - Priority value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426dds_qset_destination_orderP9dds_qos_t28dds_destination_order_kind_t">
+<span id="_CPPv326dds_qset_destination_orderP9dds_qos_t28dds_destination_order_kind_t"></span><span id="_CPPv226dds_qset_destination_orderP9dds_qos_t28dds_destination_order_kind_t"></span><span id="dds_qset_destination_order__dds_qos_tP.dds_destination_order_kind_t"></span><span class="target" id="dds__public__qos_8h_1ad7a12a1abb437977e4a7e61dd3c41f4c"></span>void <code class="sig-name descname">dds_qset_destination_order</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv428dds_destination_order_kind_t" title="dds_destination_order_kind_t">dds_destination_order_kind_t</a> <em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426dds_qset_destination_orderP9dds_qos_t28dds_destination_order_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the destination-order policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">kind</span></code>: - Destination-order kind </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430dds_qset_writer_data_lifecycleP9dds_qos_tb">
+<span id="_CPPv330dds_qset_writer_data_lifecycleP9dds_qos_tb"></span><span id="_CPPv230dds_qset_writer_data_lifecycleP9dds_qos_tb"></span><span id="dds_qset_writer_data_lifecycle__dds_qos_tP.b"></span><span class="target" id="dds__public__qos_8h_1ac237655723852f787ad8e68d1c291115"></span>void <code class="sig-name descname">dds_qset_writer_data_lifecycle</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, bool <em>autodispose</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430dds_qset_writer_data_lifecycleP9dds_qos_tb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the writer data-lifecycle policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">autodispose</span></code>: - Automatic disposal of unregistered instances </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430dds_qset_reader_data_lifecycleP9dds_qos_t14dds_duration_t14dds_duration_t">
+<span id="_CPPv330dds_qset_reader_data_lifecycleP9dds_qos_t14dds_duration_t14dds_duration_t"></span><span id="_CPPv230dds_qset_reader_data_lifecycleP9dds_qos_t14dds_duration_t14dds_duration_t"></span><span id="dds_qset_reader_data_lifecycle__dds_qos_tP.dds_duration_t.dds_duration_t"></span><span class="target" id="dds__public__qos_8h_1a9c167f2288aee1464e572bfc2438d993"></span>void <code class="sig-name descname">dds_qset_reader_data_lifecycle</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t <em>autopurge_nowriter_samples_delay</em>, dds_duration_t <em>autopurge_disposed_samples_delay</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430dds_qset_reader_data_lifecycleP9dds_qos_t14dds_duration_t14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the reader data-lifecycle policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">autopurge_nowriter_samples_delay</span></code>: - Delay for purging of samples from instances in a no-writers state </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">autopurge_disposed_samples_delay</span></code>: - Delay for purging of samples from disposed instances </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_qset_durability_serviceP9dds_qos_t14dds_duration_t18dds_history_kind_t7int32_t7int32_t7int32_t7int32_t">
+<span id="_CPPv327dds_qset_durability_serviceP9dds_qos_t14dds_duration_t18dds_history_kind_t7int32_t7int32_t7int32_t7int32_t"></span><span id="_CPPv227dds_qset_durability_serviceP9dds_qos_t14dds_duration_t18dds_history_kind_t7int32_t7int32_t7int32_t7int32_t"></span><span id="dds_qset_durability_service__dds_qos_tP.dds_duration_t.dds_history_kind_t.int32_t.int32_t.int32_t.int32_t"></span><span class="target" id="dds__public__qos_8h_1a3680335e6298a25fe3ffed6a5d97d1c6"></span>void <code class="sig-name descname">dds_qset_durability_service</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t <em>service_cleanup_delay</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv418dds_history_kind_t" title="dds_history_kind_t">dds_history_kind_t</a> <em>history_kind</em>, int32_t <em>history_depth</em>, int32_t <em>max_samples</em>, int32_t <em>max_instances</em>, int32_t <em>max_samples_per_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_qset_durability_serviceP9dds_qos_t14dds_duration_t18dds_history_kind_t7int32_t7int32_t7int32_t7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the durability-service policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">service_cleanup_delay</span></code>: - Delay for purging of abandoned instances from the durability service </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">history_kind</span></code>: - History policy kind applied by the durability service </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">history_depth</span></code>: - History policy depth applied by the durability service </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">max_samples</span></code>: - Number of samples resource-limit policy applied by the durability service </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">max_instances</span></code>: - Number of instances resource-limit policy applied by the durability service </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">max_samples_per_instance</span></code>: - Number of samples per instance resource-limit policy applied by the durability service </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420dds_qset_ignorelocalP9dds_qos_t22dds_ignorelocal_kind_t">
+<span id="_CPPv320dds_qset_ignorelocalP9dds_qos_t22dds_ignorelocal_kind_t"></span><span id="_CPPv220dds_qset_ignorelocalP9dds_qos_t22dds_ignorelocal_kind_t"></span><span id="dds_qset_ignorelocal__dds_qos_tP.dds_ignorelocal_kind_t"></span><span class="target" id="dds__public__qos_8h_1a4f41b08fb96ef97fbc00834a47d72dc2"></span>void <code class="sig-name descname">dds_qset_ignorelocal</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv422dds_ignorelocal_kind_t" title="dds_ignorelocal_kind_t">dds_ignorelocal_kind_t</a> <em>ignore</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420dds_qset_ignorelocalP9dds_qos_t22dds_ignorelocal_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the ignore-local policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ignore</span></code>: - True if readers and writers owned by the same participant should be ignored </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413dds_qset_propP9dds_qos_tPKcPKc">
+<span id="_CPPv313dds_qset_propP9dds_qos_tPKcPKc"></span><span id="_CPPv213dds_qset_propP9dds_qos_tPKcPKc"></span><span id="dds_qset_prop__dds_qos_tP.cCP.cCP"></span><span class="target" id="dds__public__qos_8h_1aec74aa66fd23255a08cf8fb7a3a3c521"></span>void <code class="sig-name descname">dds_qset_prop</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> char *<em>name</em>, <em class="property">const</em> char *<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413dds_qset_propP9dds_qos_tPKcPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stores a property with the provided name and string value in a qos structure. </p>
+<p>In the case a property with the provided name already exists in the qos structure, the value for this entry is overwritten with the provided string value. If more than one property with the provided name exists, only the value of the first of these properties is updated.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">name</span></code>: - Pointer to name of the property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">value</span></code>: - Pointer to a (null-terminated) string that will be stored </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv415dds_qunset_propP9dds_qos_tPKc">
+<span id="_CPPv315dds_qunset_propP9dds_qos_tPKc"></span><span id="_CPPv215dds_qunset_propP9dds_qos_tPKc"></span><span id="dds_qunset_prop__dds_qos_tP.cCP"></span><span class="target" id="dds__public__qos_8h_1a114b4a4a8ee942c91165dbcf12d17d61"></span>void <code class="sig-name descname">dds_qunset_prop</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> char *<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415dds_qunset_propP9dds_qos_tPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Removes the property with the provided name from a qos structure. </p>
+<p>In case more than one property exists with this name, only the first property is removed.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that contains the property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">name</span></code>: - Pointer to name of the property </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414dds_qset_bpropP9dds_qos_tPKcPKvK6size_t">
+<span id="_CPPv314dds_qset_bpropP9dds_qos_tPKcPKvK6size_t"></span><span id="_CPPv214dds_qset_bpropP9dds_qos_tPKcPKvK6size_t"></span><span id="dds_qset_bprop__dds_qos_tP.cCP.voidCP.sC"></span><span class="target" id="dds__public__qos_8h_1acba33f14ac408b8acaf11f51e210c6df"></span>void <code class="sig-name descname">dds_qset_bprop</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> char *<em>name</em>, <em class="property">const</em> void *<em>value</em>, <em class="property">const</em> size_t <em>sz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414dds_qset_bpropP9dds_qos_tPKcPKvK6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Stores the provided binary data as a property in a qos structure. </p>
+<p>In the case a property with the provided name already exists in the qos structure, the value for this entry is overwritten with the provided data. If more than one property with the provided name exists, only the value of the first of these properties is updated.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">name</span></code>: - Pointer to name of the property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">value</span></code>: - Pointer to data to be stored in the property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sz</span></code>: - Size of the data </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416dds_qunset_bpropP9dds_qos_tPKc">
+<span id="_CPPv316dds_qunset_bpropP9dds_qos_tPKc"></span><span id="_CPPv216dds_qunset_bpropP9dds_qos_tPKc"></span><span id="dds_qunset_bprop__dds_qos_tP.cCP"></span><span class="target" id="dds__public__qos_8h_1a6fe1583d3021557c84ed738ed7571c6e"></span>void <code class="sig-name descname">dds_qunset_bprop</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> char *<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416dds_qunset_bpropP9dds_qos_tPKc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Removes the binary property with the provided name from a qos structure. </p>
+<p>In case more than one binary property exists with this name, only the first binary property is removed.</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that contains the binary property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">name</span></code>: - Pointer to name of the property </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425dds_qset_type_consistencyP9dds_qos_t27dds_type_consistency_kind_tbbbbb">
+<span id="_CPPv325dds_qset_type_consistencyP9dds_qos_t27dds_type_consistency_kind_tbbbbb"></span><span id="_CPPv225dds_qset_type_consistencyP9dds_qos_t27dds_type_consistency_kind_tbbbbb"></span><span id="dds_qset_type_consistency__dds_qos_tP.dds_type_consistency_kind_t.b.b.b.b.b"></span><span class="target" id="dds__public__qos_8h_1a2f1f12669366c7d6e3804c1561912b8a"></span>void <code class="sig-name descname">dds_qset_type_consistency</code><span class="sig-paren">(</span><a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv427dds_type_consistency_kind_t" title="dds_type_consistency_kind_t">dds_type_consistency_kind_t</a> <em>kind</em>, bool <em>ignore_sequence_bounds</em>, bool <em>ignore_string_bounds</em>, bool <em>ignore_member_names</em>, bool <em>prevent_type_widening</em>, bool <em>force_type_validation</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425dds_qset_type_consistencyP9dds_qos_t27dds_type_consistency_kind_tbbbbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the type consistency enforcement policy of a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that will store the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">kind</span></code>: - Type consistency policy kind </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ignore_sequence_bounds</span></code>: - Ignore sequence bounds in type assignability checking </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ignore_string_bounds</span></code>: - Ignore string bounds in type assignability checking </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">ignore_member_names</span></code>: - Ignore member names in type assignability checking </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">prevent_type_widening</span></code>: - Prevent type widening in type assignability checking </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">force_type_validation</span></code>: - Force type validation in assignability checking </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417dds_qget_userdataPK9dds_qos_tPPvP6size_t">
+<span id="_CPPv317dds_qget_userdataPK9dds_qos_tPPvP6size_t"></span><span id="_CPPv217dds_qget_userdataPK9dds_qos_tPPvP6size_t"></span><span id="dds_qget_userdata__dds_qos_tCP.voidPP.sP"></span><span class="target" id="dds__public__qos_8h_1a95261f1b9f4b9d6235ef26f96c8e6d31"></span>bool <code class="sig-name descname">dds_qget_userdata</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, void **<em>value</em>, size_t *<em>sz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417dds_qget_userdataPK9dds_qos_tPPvP6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the userdata from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">value</span></code>: - Pointer that will store the userdata. If sz = 0, then a null pointer, else it is a pointer to an allocated buffer of sz+1 bytes where the last byte is always 0 </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">sz</span></code>: - Pointer that will store the size of userdata</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_qget_topicdataPK9dds_qos_tPPvP6size_t">
+<span id="_CPPv318dds_qget_topicdataPK9dds_qos_tPPvP6size_t"></span><span id="_CPPv218dds_qget_topicdataPK9dds_qos_tPPvP6size_t"></span><span id="dds_qget_topicdata__dds_qos_tCP.voidPP.sP"></span><span class="target" id="dds__public__qos_8h_1a685e77caff2cce81142091daed1e889d"></span>bool <code class="sig-name descname">dds_qget_topicdata</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, void **<em>value</em>, size_t *<em>sz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_qget_topicdataPK9dds_qos_tPPvP6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the topicdata from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">value</span></code>: - Pointer that will store the topicdata. If sz = 0, then a null pointer, else it is a pointer to an allocated buffer of sz+1 bytes where the last byte is always 0 </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">sz</span></code>: - Pointer that will store the size of topicdata</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_qget_groupdataPK9dds_qos_tPPvP6size_t">
+<span id="_CPPv318dds_qget_groupdataPK9dds_qos_tPPvP6size_t"></span><span id="_CPPv218dds_qget_groupdataPK9dds_qos_tPPvP6size_t"></span><span id="dds_qget_groupdata__dds_qos_tCP.voidPP.sP"></span><span class="target" id="dds__public__qos_8h_1a994027d8d438e6ddf60d701d0dd0e82c"></span>bool <code class="sig-name descname">dds_qget_groupdata</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, void **<em>value</em>, size_t *<em>sz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_qget_groupdataPK9dds_qos_tPPvP6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the groupdata from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">value</span></code>: - Pointer that will store the groupdata. If sz = 0, then a null pointer, else it is a pointer to an allocated buffer of sz+1 bytes where the last byte is always 0 </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">sz</span></code>: - Pointer that will store the size of groupdata</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419dds_qget_durabilityPK9dds_qos_tP21dds_durability_kind_t">
+<span id="_CPPv319dds_qget_durabilityPK9dds_qos_tP21dds_durability_kind_t"></span><span id="_CPPv219dds_qget_durabilityPK9dds_qos_tP21dds_durability_kind_t"></span><span id="dds_qget_durability__dds_qos_tCP.dds_durability_kind_tP"></span><span class="target" id="dds__public__qos_8h_1a45a2340770a885c32085ea2dac558674"></span>bool <code class="sig-name descname">dds_qget_durability</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv421dds_durability_kind_t" title="dds_durability_kind_t">dds_durability_kind_t</a> *<em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_qget_durabilityPK9dds_qos_tP21dds_durability_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the durability policy from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">kind</span></code>: - Pointer that will store the durability kind</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv416dds_qget_historyPK9dds_qos_tP18dds_history_kind_tP7int32_t">
+<span id="_CPPv316dds_qget_historyPK9dds_qos_tP18dds_history_kind_tP7int32_t"></span><span id="_CPPv216dds_qget_historyPK9dds_qos_tP18dds_history_kind_tP7int32_t"></span><span id="dds_qget_history__dds_qos_tCP.dds_history_kind_tP.int32_tP"></span><span class="target" id="dds__public__qos_8h_1a99209a1a9ad3fa41f88b9f7b773e6093"></span>bool <code class="sig-name descname">dds_qget_history</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv418dds_history_kind_t" title="dds_history_kind_t">dds_history_kind_t</a> *<em>kind</em>, int32_t *<em>depth</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416dds_qget_historyPK9dds_qos_tP18dds_history_kind_tP7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the history policy from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">kind</span></code>: - Pointer that will store the history kind (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">depth</span></code>: - Pointer that will store the history depth (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424dds_qget_resource_limitsPK9dds_qos_tP7int32_tP7int32_tP7int32_t">
+<span id="_CPPv324dds_qget_resource_limitsPK9dds_qos_tP7int32_tP7int32_tP7int32_t"></span><span id="_CPPv224dds_qget_resource_limitsPK9dds_qos_tP7int32_tP7int32_tP7int32_t"></span><span id="dds_qget_resource_limits__dds_qos_tCP.int32_tP.int32_tP.int32_tP"></span><span class="target" id="dds__public__qos_8h_1a97f6bd5a7832bac32ed7d903725465c1"></span>bool <code class="sig-name descname">dds_qget_resource_limits</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, int32_t *<em>max_samples</em>, int32_t *<em>max_instances</em>, int32_t *<em>max_samples_per_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424dds_qget_resource_limitsPK9dds_qos_tP7int32_tP7int32_tP7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the resource-limits policy from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">max_samples</span></code>: - Pointer that will store the number of samples resource-limit (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">max_instances</span></code>: - Pointer that will store the number of instances resource-limit (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">max_samples_per_instance</span></code>: - Pointer that will store the number of samples per instance resource-limit (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv421dds_qget_presentationPK9dds_qos_tP36dds_presentation_access_scope_kind_tPbPb">
+<span id="_CPPv321dds_qget_presentationPK9dds_qos_tP36dds_presentation_access_scope_kind_tPbPb"></span><span id="_CPPv221dds_qget_presentationPK9dds_qos_tP36dds_presentation_access_scope_kind_tPbPb"></span><span id="dds_qget_presentation__dds_qos_tCP.dds_presentation_access_scope_kind_tP.bP.bP"></span><span class="target" id="dds__public__qos_8h_1a16aebde6bd555bc4f0347067314667f0"></span>bool <code class="sig-name descname">dds_qget_presentation</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv436dds_presentation_access_scope_kind_t" title="dds_presentation_access_scope_kind_t">dds_presentation_access_scope_kind_t</a> *<em>access_scope</em>, bool *<em>coherent_access</em>, bool *<em>ordered_access</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421dds_qget_presentationPK9dds_qos_tP36dds_presentation_access_scope_kind_tPbPb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the presentation policy from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">access_scope</span></code>: - Pointer that will store access scope kind (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">coherent_access</span></code>: - Pointer that will store coherent access enable value (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">ordered_access</span></code>: - Pointer that will store orderede access enable value (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417dds_qget_lifespanPK9dds_qos_tP14dds_duration_t">
+<span id="_CPPv317dds_qget_lifespanPK9dds_qos_tP14dds_duration_t"></span><span id="_CPPv217dds_qget_lifespanPK9dds_qos_tP14dds_duration_t"></span><span id="dds_qget_lifespan__dds_qos_tCP.dds_duration_tP"></span><span class="target" id="dds__public__qos_8h_1a79fbc67368f3527d461536ec24a08a35"></span>bool <code class="sig-name descname">dds_qget_lifespan</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t *<em>lifespan</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417dds_qget_lifespanPK9dds_qos_tP14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the lifespan policy from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">lifespan</span></code>: - Pointer that will store lifespan duration</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417dds_qget_deadlinePK9dds_qos_tP14dds_duration_t">
+<span id="_CPPv317dds_qget_deadlinePK9dds_qos_tP14dds_duration_t"></span><span id="_CPPv217dds_qget_deadlinePK9dds_qos_tP14dds_duration_t"></span><span id="dds_qget_deadline__dds_qos_tCP.dds_duration_tP"></span><span class="target" id="dds__public__qos_8h_1a1c6296cf8371243fe25bcff1950f9c65"></span>bool <code class="sig-name descname">dds_qget_deadline</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t *<em>deadline</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417dds_qget_deadlinePK9dds_qos_tP14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the deadline policy from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">deadline</span></code>: - Pointer that will store deadline duration</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423dds_qget_latency_budgetPK9dds_qos_tP14dds_duration_t">
+<span id="_CPPv323dds_qget_latency_budgetPK9dds_qos_tP14dds_duration_t"></span><span id="_CPPv223dds_qget_latency_budgetPK9dds_qos_tP14dds_duration_t"></span><span id="dds_qget_latency_budget__dds_qos_tCP.dds_duration_tP"></span><span class="target" id="dds__public__qos_8h_1a7f50e88c3213379b9fe31a288845fcae"></span>bool <code class="sig-name descname">dds_qget_latency_budget</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t *<em>duration</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423dds_qget_latency_budgetPK9dds_qos_tP14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the latency-budget policy from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">duration</span></code>: - Pointer that will store latency-budget duration</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_qget_ownershipPK9dds_qos_tP20dds_ownership_kind_t">
+<span id="_CPPv318dds_qget_ownershipPK9dds_qos_tP20dds_ownership_kind_t"></span><span id="_CPPv218dds_qget_ownershipPK9dds_qos_tP20dds_ownership_kind_t"></span><span id="dds_qget_ownership__dds_qos_tCP.dds_ownership_kind_tP"></span><span class="target" id="dds__public__qos_8h_1ae1fbaf59545b348986a045d840ced753"></span>bool <code class="sig-name descname">dds_qget_ownership</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv420dds_ownership_kind_t" title="dds_ownership_kind_t">dds_ownership_kind_t</a> *<em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_qget_ownershipPK9dds_qos_tP20dds_ownership_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the ownership policy from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">kind</span></code>: - Pointer that will store the ownership kind</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_qget_ownership_strengthPK9dds_qos_tP7int32_t">
+<span id="_CPPv327dds_qget_ownership_strengthPK9dds_qos_tP7int32_t"></span><span id="_CPPv227dds_qget_ownership_strengthPK9dds_qos_tP7int32_t"></span><span id="dds_qget_ownership_strength__dds_qos_tCP.int32_tP"></span><span class="target" id="dds__public__qos_8h_1a3f0c811f5d9976cf3f1913352a84c955"></span>bool <code class="sig-name descname">dds_qget_ownership_strength</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, int32_t *<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_qget_ownership_strengthPK9dds_qos_tP7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the ownership strength qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">value</span></code>: - Pointer that will store the ownership strength value</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419dds_qget_livelinessPK9dds_qos_tP21dds_liveliness_kind_tP14dds_duration_t">
+<span id="_CPPv319dds_qget_livelinessPK9dds_qos_tP21dds_liveliness_kind_tP14dds_duration_t"></span><span id="_CPPv219dds_qget_livelinessPK9dds_qos_tP21dds_liveliness_kind_tP14dds_duration_t"></span><span id="dds_qget_liveliness__dds_qos_tCP.dds_liveliness_kind_tP.dds_duration_tP"></span><span class="target" id="dds__public__qos_8h_1ac46e8bb34514ed3e3fdaeafb150c5a11"></span>bool <code class="sig-name descname">dds_qget_liveliness</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv421dds_liveliness_kind_t" title="dds_liveliness_kind_t">dds_liveliness_kind_t</a> *<em>kind</em>, dds_duration_t *<em>lease_duration</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_qget_livelinessPK9dds_qos_tP21dds_liveliness_kind_tP14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the liveliness qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">kind</span></code>: - Pointer that will store the liveliness kind (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">lease_duration</span></code>: - Pointer that will store the liveliness lease duration (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426dds_qget_time_based_filterPK9dds_qos_tP14dds_duration_t">
+<span id="_CPPv326dds_qget_time_based_filterPK9dds_qos_tP14dds_duration_t"></span><span id="_CPPv226dds_qget_time_based_filterPK9dds_qos_tP14dds_duration_t"></span><span id="dds_qget_time_based_filter__dds_qos_tCP.dds_duration_tP"></span><span class="target" id="dds__public__qos_8h_1a6f6b6eb1130adbdcde71f9ac09cf62bf"></span>bool <code class="sig-name descname">dds_qget_time_based_filter</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t *<em>minimum_separation</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426dds_qget_time_based_filterPK9dds_qos_tP14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the time-based filter qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">minimum_separation</span></code>: - Pointer that will store the minimum separation duration (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_qget_partitionPK9dds_qos_tP8uint32_tPPPc">
+<span id="_CPPv318dds_qget_partitionPK9dds_qos_tP8uint32_tPPPc"></span><span id="_CPPv218dds_qget_partitionPK9dds_qos_tP8uint32_tPPPc"></span><span id="dds_qget_partition__dds_qos_tCP.uint32_tP.cPPP"></span><span class="target" id="dds__public__qos_8h_1a6363952c5f575cf8dc0d8fcd1325a436"></span>bool <code class="sig-name descname">dds_qget_partition</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, uint32_t *<em>n</em>, char ***<em>ps</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_qget_partitionPK9dds_qos_tP8uint32_tPPPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the partition qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">n</span></code>: - Pointer that will store the number of partitions (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">ps</span></code>: - Pointer that will store the string(s) containing partition name(s) (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420dds_qget_reliabilityPK9dds_qos_tP22dds_reliability_kind_tP14dds_duration_t">
+<span id="_CPPv320dds_qget_reliabilityPK9dds_qos_tP22dds_reliability_kind_tP14dds_duration_t"></span><span id="_CPPv220dds_qget_reliabilityPK9dds_qos_tP22dds_reliability_kind_tP14dds_duration_t"></span><span id="dds_qget_reliability__dds_qos_tCP.dds_reliability_kind_tP.dds_duration_tP"></span><span class="target" id="dds__public__qos_8h_1ad179497890069c89db402793c51bac5a"></span>bool <code class="sig-name descname">dds_qget_reliability</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv422dds_reliability_kind_t" title="dds_reliability_kind_t">dds_reliability_kind_t</a> *<em>kind</em>, dds_duration_t *<em>max_blocking_time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420dds_qget_reliabilityPK9dds_qos_tP22dds_reliability_kind_tP14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the reliability qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">kind</span></code>: - Pointer that will store the reliability kind (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">max_blocking_time</span></code>: - Pointer that will store the max blocking time for reliable reliability (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_qget_transport_priorityPK9dds_qos_tP7int32_t">
+<span id="_CPPv327dds_qget_transport_priorityPK9dds_qos_tP7int32_t"></span><span id="_CPPv227dds_qget_transport_priorityPK9dds_qos_tP7int32_t"></span><span id="dds_qget_transport_priority__dds_qos_tCP.int32_tP"></span><span class="target" id="dds__public__qos_8h_1a0e2c57f4364ddc5a56dc190619676b7b"></span>bool <code class="sig-name descname">dds_qget_transport_priority</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, int32_t *<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_qget_transport_priorityPK9dds_qos_tP7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the transport priority qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">value</span></code>: - Pointer that will store the transport priority value</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv426dds_qget_destination_orderPK9dds_qos_tP28dds_destination_order_kind_t">
+<span id="_CPPv326dds_qget_destination_orderPK9dds_qos_tP28dds_destination_order_kind_t"></span><span id="_CPPv226dds_qget_destination_orderPK9dds_qos_tP28dds_destination_order_kind_t"></span><span id="dds_qget_destination_order__dds_qos_tCP.dds_destination_order_kind_tP"></span><span class="target" id="dds__public__qos_8h_1a7fe02e23b69ad34c8a9e748ef727c3b0"></span>bool <code class="sig-name descname">dds_qget_destination_order</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv428dds_destination_order_kind_t" title="dds_destination_order_kind_t">dds_destination_order_kind_t</a> *<em>kind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426dds_qget_destination_orderPK9dds_qos_tP28dds_destination_order_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the destination-order qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">kind</span></code>: - Pointer that will store the destination-order kind</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430dds_qget_writer_data_lifecyclePK9dds_qos_tPb">
+<span id="_CPPv330dds_qget_writer_data_lifecyclePK9dds_qos_tPb"></span><span id="_CPPv230dds_qget_writer_data_lifecyclePK9dds_qos_tPb"></span><span id="dds_qget_writer_data_lifecycle__dds_qos_tCP.bP"></span><span class="target" id="dds__public__qos_8h_1a5153b1f66650bedae134ad47061feb98"></span>bool <code class="sig-name descname">dds_qget_writer_data_lifecycle</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, bool *<em>autodispose</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430dds_qget_writer_data_lifecyclePK9dds_qos_tPb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the writer data-lifecycle qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">autodispose</span></code>: - Pointer that will store the autodispose unregistered instances enable value</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430dds_qget_reader_data_lifecyclePK9dds_qos_tP14dds_duration_tP14dds_duration_t">
+<span id="_CPPv330dds_qget_reader_data_lifecyclePK9dds_qos_tP14dds_duration_tP14dds_duration_t"></span><span id="_CPPv230dds_qget_reader_data_lifecyclePK9dds_qos_tP14dds_duration_tP14dds_duration_t"></span><span id="dds_qget_reader_data_lifecycle__dds_qos_tCP.dds_duration_tP.dds_duration_tP"></span><span class="target" id="dds__public__qos_8h_1a999b6d328563f793451c86894172e73c"></span>bool <code class="sig-name descname">dds_qget_reader_data_lifecycle</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t *<em>autopurge_nowriter_samples_delay</em>, dds_duration_t *<em>autopurge_disposed_samples_delay</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430dds_qget_reader_data_lifecyclePK9dds_qos_tP14dds_duration_tP14dds_duration_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the reader data-lifecycle qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">autopurge_nowriter_samples_delay</span></code>: - Pointer that will store the delay for auto-purging samples from instances in a no-writer state (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">autopurge_disposed_samples_delay</span></code>: - Pointer that will store the delay for auto-purging of disposed instances (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_qget_durability_servicePK9dds_qos_tP14dds_duration_tP18dds_history_kind_tP7int32_tP7int32_tP7int32_tP7int32_t">
+<span id="_CPPv327dds_qget_durability_servicePK9dds_qos_tP14dds_duration_tP18dds_history_kind_tP7int32_tP7int32_tP7int32_tP7int32_t"></span><span id="_CPPv227dds_qget_durability_servicePK9dds_qos_tP14dds_duration_tP18dds_history_kind_tP7int32_tP7int32_tP7int32_tP7int32_t"></span><span id="dds_qget_durability_service__dds_qos_tCP.dds_duration_tP.dds_history_kind_tP.int32_tP.int32_tP.int32_tP.int32_tP"></span><span class="target" id="dds__public__qos_8h_1a819b1c8d57d6d02f818abccc8d46ea73"></span>bool <code class="sig-name descname">dds_qget_durability_service</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, dds_duration_t *<em>service_cleanup_delay</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv418dds_history_kind_t" title="dds_history_kind_t">dds_history_kind_t</a> *<em>history_kind</em>, int32_t *<em>history_depth</em>, int32_t *<em>max_samples</em>, int32_t *<em>max_instances</em>, int32_t *<em>max_samples_per_instance</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_qget_durability_servicePK9dds_qos_tP14dds_duration_tP18dds_history_kind_tP7int32_tP7int32_tP7int32_tP7int32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the durability-service qos policy values. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">service_cleanup_delay</span></code>: - Pointer that will store the delay for purging of abandoned instances from the durability service (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">history_kind</span></code>: - Pointer that will store history policy kind applied by the durability service (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">history_depth</span></code>: - Pointer that will store history policy depth applied by the durability service (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">max_samples</span></code>: - Pointer that will store number of samples resource-limit policy applied by the durability service (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">max_instances</span></code>: - Pointer that will store number of instances resource-limit policy applied by the durability service (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">max_samples_per_instance</span></code>: - Pointer that will store number of samples per instance resource-limit policy applied by the durability service (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420dds_qget_ignorelocalPK9dds_qos_tP22dds_ignorelocal_kind_t">
+<span id="_CPPv320dds_qget_ignorelocalPK9dds_qos_tP22dds_ignorelocal_kind_t"></span><span id="_CPPv220dds_qget_ignorelocalPK9dds_qos_tP22dds_ignorelocal_kind_t"></span><span id="dds_qget_ignorelocal__dds_qos_tCP.dds_ignorelocal_kind_tP"></span><span class="target" id="dds__public__qos_8h_1a276ca8637fc9259ae1fe39edcf7341f5"></span>bool <code class="sig-name descname">dds_qget_ignorelocal</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv422dds_ignorelocal_kind_t" title="dds_ignorelocal_kind_t">dds_ignorelocal_kind_t</a> *<em>ignore</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420dds_qget_ignorelocalPK9dds_qos_tP22dds_ignorelocal_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the ignore-local qos policy. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">ignore</span></code>: - Pointer that will store whether to ignore readers/writers owned by the same participant (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_qget_propnamesPK9dds_qos_tP8uint32_tPPPc">
+<span id="_CPPv318dds_qget_propnamesPK9dds_qos_tP8uint32_tPPPc"></span><span id="_CPPv218dds_qget_propnamesPK9dds_qos_tP8uint32_tPPPc"></span><span id="dds_qget_propnames__dds_qos_tCP.uint32_tP.cPPP"></span><span class="target" id="dds__public__qos_8h_1abed94494c831692178473f25097b67f9"></span>bool <code class="sig-name descname">dds_qget_propnames</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, uint32_t *<em>n</em>, char ***<em>names</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_qget_propnamesPK9dds_qos_tP8uint32_tPPPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the names of the properties from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that contains properties </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">n</span></code>: - Pointer to number of property names that are returned (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">names</span></code>: - Pointer that will store the string(s) containing property name(s) (optional). This function will allocate the memory for the list of names and for the strings containing the names; the caller gets ownership of the allocated memory</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv413dds_qget_propPK9dds_qos_tPKcPPc">
+<span id="_CPPv313dds_qget_propPK9dds_qos_tPKcPPc"></span><span id="_CPPv213dds_qget_propPK9dds_qos_tPKcPPc"></span><span id="dds_qget_prop__dds_qos_tCP.cCP.cPP"></span><span class="target" id="dds__public__qos_8h_1a06de20e9a525fa601d7d8c196be6fb1d"></span>bool <code class="sig-name descname">dds_qget_prop</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> char *<em>name</em>, char **<em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413dds_qget_propPK9dds_qos_tPKcPPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the value of the property with the provided name from a qos structure. </p>
+<p>In case more than one property exists with this name, the value for the first property with this name will be returned.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid, the qos is not present in the qos object or there was no property found with the provided name </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that contains the property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">name</span></code>: - Pointer to name of the property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">value</span></code>: - Pointer to a string that will store the value of the property. The memory for storing the string value will be allocated by this function and the caller gets ownership of the allocated memory</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419dds_qget_bpropnamesPK9dds_qos_tP8uint32_tPPPc">
+<span id="_CPPv319dds_qget_bpropnamesPK9dds_qos_tP8uint32_tPPPc"></span><span id="_CPPv219dds_qget_bpropnamesPK9dds_qos_tP8uint32_tPPPc"></span><span id="dds_qget_bpropnames__dds_qos_tCP.uint32_tP.cPPP"></span><span class="target" id="dds__public__qos_8h_1afe7b97bf6909b000e75eaef3ab25781e"></span>bool <code class="sig-name descname">dds_qget_bpropnames</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, uint32_t *<em>n</em>, char ***<em>names</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_qget_bpropnamesPK9dds_qos_tP8uint32_tPPPc" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Gets the names of the binary properties from a qos structure. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that contains binary properties </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">n</span></code>: - Pointer to number of binary property names that are returned (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">names</span></code>: - Pointer that will store the string(s) containing binary property name(s) (optional). This function will allocate the memory for the list of names and for the strings containing the names; the caller gets ownership of the allocated memory</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv414dds_qget_bpropPK9dds_qos_tPKcPPvP6size_t">
+<span id="_CPPv314dds_qget_bpropPK9dds_qos_tPKcPPvP6size_t"></span><span id="_CPPv214dds_qget_bpropPK9dds_qos_tPKcPPvP6size_t"></span><span id="dds_qget_bprop__dds_qos_tCP.cCP.voidPP.sP"></span><span class="target" id="dds__public__qos_8h_1a2092cf82d6bd2e1361cfaaa6b19763cd"></span>bool <code class="sig-name descname">dds_qget_bprop</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <em class="property">const</em> char *<em>name</em>, void **<em>value</em>, size_t *<em>sz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414dds_qget_bpropPK9dds_qos_tPKcPPvP6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the value of the binary property with the provided name from a qos structure. </p>
+<p>In case more than one binary property exists with this name, the value for the first binary property with this name will be returned.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid, the qos is not present in the qos object or there was no binary property found with the provided name </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure that contains the property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">name</span></code>: - Pointer to name of the binary property </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">value</span></code>: - Pointer to a buffer that will store the value of the property. If sz = 0 then a NULL pointer. The memory for storing the value will be allocated by this function and the caller gets ownership of the allocated memory </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">sz</span></code>: - Pointer that will store the size of the returned buffer.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv425dds_qget_type_consistencyPK9dds_qos_tP27dds_type_consistency_kind_tPbPbPbPbPb">
+<span id="_CPPv325dds_qget_type_consistencyPK9dds_qos_tP27dds_type_consistency_kind_tPbPbPbPbPb"></span><span id="_CPPv225dds_qget_type_consistencyPK9dds_qos_tP27dds_type_consistency_kind_tPbPbPbPbPb"></span><span id="dds_qget_type_consistency__dds_qos_tCP.dds_type_consistency_kind_tP.bP.bP.bP.bP.bP"></span><span class="target" id="dds__public__qos_8h_1a220f45b0dd19661b75e3d1ec4a588bf2"></span>bool <code class="sig-name descname">dds_qget_type_consistency</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv49dds_qos_t" title="dds_qos_t">dds_qos_t</a> *<em>qos</em>, <a class="reference internal" href="dds__public__qosdefs_8h.html#_CPPv427dds_type_consistency_kind_t" title="dds_type_consistency_kind_t">dds_type_consistency_kind_t</a> *<em>kind</em>, bool *<em>ignore_sequence_bounds</em>, bool *<em>ignore_string_bounds</em>, bool *<em>ignore_member_names</em>, bool *<em>prevent_type_widening</em>, bool *<em>force_type_validation</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425dds_qget_type_consistencyPK9dds_qos_tP27dds_type_consistency_kind_tPbPbPbPbPb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the type consistency enforcement qos policy values. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>- false iff any of the arguments is invalid or the qos is not present in the qos object </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">qos</span></code>: - Pointer to a dds_qos_t structure storing the policy </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">kind</span></code>: - Pointer that will store the type consistency enforcement kind (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">ignore_sequence_bounds</span></code>: - Pointer that will store the boolean value for ignoring sequence bounds in type assignability checking (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">ignore_string_bounds</span></code>: - Pointer that will store the boolean value for ignoring string bounds in type assignability checking (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">ignore_member_names</span></code>: - Pointer that will store the boolean value for ignoring member names in type assignability checking (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">prevent_type_widening</span></code>: - Pointer that will store the boolean value to prevent type widening in type assignability checking (optional) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[inout]</span> <span class="pre">force_type_validation</span></code>: - Pointer that will store the boolean value to force type validation in assignability checking (optional)</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dds__public__qosdefs_8h.html" class="btn btn-neutral float-right" title="File dds_public_qosdefs.h" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dds__public__listener_8h.html" class="btn btn-neutral float-left" title="File dds_public_listener.h" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CycloneDDS committers
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

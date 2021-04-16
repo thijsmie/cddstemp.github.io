@@ -1,0 +1,13 @@
+.. _exhale_function_dds__internal__api_8h_1a4ed81c96b5befb89803c5adcd9d94bf1:
+
+Function dds_reader_lock_samples
+================================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_ddsc_dds_internal_api.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: dds_reader_lock_samples(dds_entity_t)

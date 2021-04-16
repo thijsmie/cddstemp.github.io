@@ -1,0 +1,13 @@
+.. _exhale_function_dds_8h_1a0b2918a6ec7674f7d2667068a8a7cfc5:
+
+Function dds_find_topic
+=======================
+
+- Defined in :ref:`file__mnt_m_Libraries_Projects_CyclonePlayground_cyclonedds-fork_src_core_ddsc_include_dds_dds.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: dds_find_topic(dds_entity_t, const char *)

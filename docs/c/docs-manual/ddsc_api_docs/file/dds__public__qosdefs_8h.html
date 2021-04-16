@@ -1,0 +1,638 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File dds_public_qosdefs.h &mdash; CycloneDDS 0.7.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File dds_public_status.h" href="dds__public__status_8h.html" />
+    <link rel="prev" title="File dds_public_qos.h" href="dds__public__qos_8h.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> CycloneDDS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/installation.html">Installing Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld.html">Building Eclipse Cyclone DDS applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld_indepth.html">Hello World! in more detail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/next_steps.html">What’s next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/uninstall.html">Uninstalling Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dds_8h.html">File dds.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__internal__api_8h.html">File dds_internal_api.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__alloc_8h.html">File dds_public_alloc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__error_8h.html">File dds_public_error.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__impl_8h.html">File dds_public_impl.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__listener_8h.html">File dds_public_listener.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__qos_8h.html">File dds_public_qos.h</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File dds_public_qosdefs.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__status_8h.html">File dds_public_status.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__rhc_8h.html">File dds_rhc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__statistics_8h.html">File dds_statistics.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unionlist.html">Union list</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">A guide to the configuration options of Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">DDS Security</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CycloneDDS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File dds_public_qosdefs.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/ddsc_api_docs/file/dds__public__qosdefs_8h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-dds-public-qosdefs-h">
+<h1>File dds_public_qosdefs.h<a class="headerlink" href="#file-dds-public-qosdefs-h" title="Permalink to this headline">¶</a></h1>
+<p>DDS C QoS API. </p>
+<p>This header file defines the public API of QoS and Policies in the Eclipse Cyclone DDS C language binding. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.DDS_LENGTH_UNLIMITED">
+<span class="target" id="dds__public__qosdefs_8h_1a1acaf7769af1917359471d007594328c"></span><code class="sig-name descname">DDS_LENGTH_UNLIMITED</code><a class="headerlink" href="#c.DDS_LENGTH_UNLIMITED" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Typedefs</p>
+<dl class="cpp type">
+<dt id="_CPPv419dds_qos_policy_id_t">
+<span id="_CPPv319dds_qos_policy_id_t"></span><span id="_CPPv219dds_qos_policy_id_t"></span><span id="dds_qos_policy_id_t"></span><span class="target" id="dds__public__qosdefs_8h_1a3656adc484ef5448cea98f395be2ae8d"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv417dds_qos_policy_id" title="dds_qos_policy_id">dds_qos_policy_id</a> <code class="sig-name descname">dds_qos_policy_id_t</code><a class="headerlink" href="#_CPPv419dds_qos_policy_id_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>QoS identifiers </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv49dds_qos_t">
+<span id="_CPPv39dds_qos_t"></span><span id="_CPPv29dds_qos_t"></span><span id="dds_qos_t"></span><span class="target" id="dds__public__qosdefs_8h_1a2ecc2eff9e47ee74264a1b93c65241cc"></span><em class="property">typedef </em><em class="property">struct</em> dds_qos <code class="sig-name descname">dds_qos_t</code><a class="headerlink" href="#_CPPv49dds_qos_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>QoS structure </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv421dds_durability_kind_t">
+<span id="_CPPv321dds_durability_kind_t"></span><span id="_CPPv221dds_durability_kind_t"></span><span id="dds_durability_kind_t"></span><span class="target" id="dds__public__qosdefs_8h_1a8bfdce3f77e345fbdc8073f834560b0e"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv419dds_durability_kind" title="dds_durability_kind">dds_durability_kind</a> <code class="sig-name descname">dds_durability_kind_t</code><a class="headerlink" href="#_CPPv421dds_durability_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Durability QoS: Applies to Topic, DataReader, DataWriter </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv418dds_history_kind_t">
+<span id="_CPPv318dds_history_kind_t"></span><span id="_CPPv218dds_history_kind_t"></span><span id="dds_history_kind_t"></span><span class="target" id="dds__public__qosdefs_8h_1ab9131535b6cc6a00a8410c3006d92f33"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv416dds_history_kind" title="dds_history_kind">dds_history_kind</a> <code class="sig-name descname">dds_history_kind_t</code><a class="headerlink" href="#_CPPv418dds_history_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>History QoS: Applies to Topic, DataReader, DataWriter </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv420dds_ownership_kind_t">
+<span id="_CPPv320dds_ownership_kind_t"></span><span id="_CPPv220dds_ownership_kind_t"></span><span id="dds_ownership_kind_t"></span><span class="target" id="dds__public__qosdefs_8h_1a9d945de88cb03bcb4709b0470c9c99e3"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv418dds_ownership_kind" title="dds_ownership_kind">dds_ownership_kind</a> <code class="sig-name descname">dds_ownership_kind_t</code><a class="headerlink" href="#_CPPv420dds_ownership_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ownership QoS: Applies to Topic, DataReader, DataWriter </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv421dds_liveliness_kind_t">
+<span id="_CPPv321dds_liveliness_kind_t"></span><span id="_CPPv221dds_liveliness_kind_t"></span><span id="dds_liveliness_kind_t"></span><span class="target" id="dds__public__qosdefs_8h_1a025e655f0973d7ce855bd93da1e2365c"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv419dds_liveliness_kind" title="dds_liveliness_kind">dds_liveliness_kind</a> <code class="sig-name descname">dds_liveliness_kind_t</code><a class="headerlink" href="#_CPPv421dds_liveliness_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Liveliness QoS: Applies to Topic, DataReader, DataWriter </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv422dds_reliability_kind_t">
+<span id="_CPPv322dds_reliability_kind_t"></span><span id="_CPPv222dds_reliability_kind_t"></span><span id="dds_reliability_kind_t"></span><span class="target" id="dds__public__qosdefs_8h_1ab975ad0f7e6d0288bb0f7738a55b82aa"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv420dds_reliability_kind" title="dds_reliability_kind">dds_reliability_kind</a> <code class="sig-name descname">dds_reliability_kind_t</code><a class="headerlink" href="#_CPPv422dds_reliability_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reliability QoS: Applies to Topic, DataReader, DataWriter </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv428dds_destination_order_kind_t">
+<span id="_CPPv328dds_destination_order_kind_t"></span><span id="_CPPv228dds_destination_order_kind_t"></span><span id="dds_destination_order_kind_t"></span><span class="target" id="dds__public__qosdefs_8h_1ae2a9ea97d88283ca5014354cfd7f59d0"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv426dds_destination_order_kind" title="dds_destination_order_kind">dds_destination_order_kind</a> <code class="sig-name descname">dds_destination_order_kind_t</code><a class="headerlink" href="#_CPPv428dds_destination_order_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>DestinationOrder QoS: Applies to Topic, DataReader, DataWriter </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv436dds_presentation_access_scope_kind_t">
+<span id="_CPPv336dds_presentation_access_scope_kind_t"></span><span id="_CPPv236dds_presentation_access_scope_kind_t"></span><span id="dds_presentation_access_scope_kind_t"></span><span class="target" id="dds__public__qosdefs_8h_1a565f89c302322fa74cb4df56f62735cd"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv434dds_presentation_access_scope_kind" title="dds_presentation_access_scope_kind">dds_presentation_access_scope_kind</a> <code class="sig-name descname">dds_presentation_access_scope_kind_t</code><a class="headerlink" href="#_CPPv436dds_presentation_access_scope_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Presentation QoS: Applies to Publisher, Subscriber </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv422dds_ignorelocal_kind_t">
+<span id="_CPPv322dds_ignorelocal_kind_t"></span><span id="_CPPv222dds_ignorelocal_kind_t"></span><span id="dds_ignorelocal_kind_t"></span><span class="target" id="dds__public__qosdefs_8h_1adb997fb9d841d56d61a4334f45c7b369"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv420dds_ignorelocal_kind" title="dds_ignorelocal_kind">dds_ignorelocal_kind</a> <code class="sig-name descname">dds_ignorelocal_kind_t</code><a class="headerlink" href="#_CPPv422dds_ignorelocal_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ignore-local QoS: Applies to DataReader, DataWriter </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv427dds_type_consistency_kind_t">
+<span id="_CPPv327dds_type_consistency_kind_t"></span><span id="_CPPv227dds_type_consistency_kind_t"></span><span id="dds_type_consistency_kind_t"></span><span class="target" id="dds__public__qosdefs_8h_1a4a8951ef6ef4218b9e04e1db97b73092"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv425dds_type_consistency_kind" title="dds_type_consistency_kind">dds_type_consistency_kind</a> <code class="sig-name descname">dds_type_consistency_kind_t</code><a class="headerlink" href="#_CPPv427dds_type_consistency_kind_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Enums</p>
+<dl class="cpp enum">
+<dt id="_CPPv417dds_qos_policy_id">
+<span id="_CPPv317dds_qos_policy_id"></span><span id="_CPPv217dds_qos_policy_id"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57"></span><em class="property">enum </em><code class="sig-name descname">dds_qos_policy_id</code><a class="headerlink" href="#_CPPv417dds_qos_policy_id" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>QoS identifiers </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id25DDS_INVALID_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id25DDS_INVALID_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id25DDS_INVALID_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a3b381d1bfefadadd7bdc4a6df94066ba"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_INVALID_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id25DDS_INVALID_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id26DDS_USERDATA_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id26DDS_USERDATA_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id26DDS_USERDATA_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57afd439068503642ba27ae03e82cd5dfc8"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_USERDATA_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id26DDS_USERDATA_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id28DDS_DURABILITY_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id28DDS_DURABILITY_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id28DDS_DURABILITY_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57abc6c3daf8f99df31ca60def2b953b800"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DURABILITY_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id28DDS_DURABILITY_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id30DDS_PRESENTATION_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id30DDS_PRESENTATION_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id30DDS_PRESENTATION_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a9515752aa5a5e4580593a819446767ff"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_PRESENTATION_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id30DDS_PRESENTATION_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id26DDS_DEADLINE_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id26DDS_DEADLINE_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id26DDS_DEADLINE_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57abd77e173b457d7c9a4455c00f5a72d32"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DEADLINE_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id26DDS_DEADLINE_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id31DDS_LATENCYBUDGET_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id31DDS_LATENCYBUDGET_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id31DDS_LATENCYBUDGET_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a4307e6cf33965ad1b332de72c7b0a3e6"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_LATENCYBUDGET_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id31DDS_LATENCYBUDGET_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id27DDS_OWNERSHIP_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id27DDS_OWNERSHIP_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id27DDS_OWNERSHIP_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57afd0f507c4cc38a933f5817d0ea873d03"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_OWNERSHIP_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id27DDS_OWNERSHIP_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id35DDS_OWNERSHIPSTRENGTH_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id35DDS_OWNERSHIPSTRENGTH_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id35DDS_OWNERSHIPSTRENGTH_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a766d1409fe6aa9ee6264f4efe69731c5"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_OWNERSHIPSTRENGTH_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id35DDS_OWNERSHIPSTRENGTH_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id28DDS_LIVELINESS_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id28DDS_LIVELINESS_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id28DDS_LIVELINESS_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57ad155c60f378087fa8fdbb0f3eddca268"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_LIVELINESS_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id28DDS_LIVELINESS_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id33DDS_TIMEBASEDFILTER_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id33DDS_TIMEBASEDFILTER_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id33DDS_TIMEBASEDFILTER_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a5c24a0ad10b8b5557f608306acff7e50"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_TIMEBASEDFILTER_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id33DDS_TIMEBASEDFILTER_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id27DDS_PARTITION_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id27DDS_PARTITION_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id27DDS_PARTITION_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a2914476b818ff9a6c16a5a15cc4c9859"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_PARTITION_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id27DDS_PARTITION_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id29DDS_RELIABILITY_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id29DDS_RELIABILITY_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id29DDS_RELIABILITY_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a33cceb8ac73aa06ef39485b3d887c815"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_RELIABILITY_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id29DDS_RELIABILITY_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id34DDS_DESTINATIONORDER_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id34DDS_DESTINATIONORDER_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id34DDS_DESTINATIONORDER_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57abc7d529d3a26069586a80b7aac6763c4"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DESTINATIONORDER_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id34DDS_DESTINATIONORDER_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id25DDS_HISTORY_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id25DDS_HISTORY_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id25DDS_HISTORY_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57ae84e1113bab59340942bfd52193ea428"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_HISTORY_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id25DDS_HISTORY_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id32DDS_RESOURCELIMITS_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id32DDS_RESOURCELIMITS_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id32DDS_RESOURCELIMITS_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57af6dc4ee596d5cbe34bf5c4cb67533c57"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_RESOURCELIMITS_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id32DDS_RESOURCELIMITS_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id31DDS_ENTITYFACTORY_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id31DDS_ENTITYFACTORY_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id31DDS_ENTITYFACTORY_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a02e9e33058e0cdbce813165a59c53438"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_ENTITYFACTORY_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id31DDS_ENTITYFACTORY_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id37DDS_WRITERDATALIFECYCLE_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id37DDS_WRITERDATALIFECYCLE_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id37DDS_WRITERDATALIFECYCLE_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57ac87a7459f45e7dfb8b4fe6d7948edb89"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_WRITERDATALIFECYCLE_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id37DDS_WRITERDATALIFECYCLE_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id37DDS_READERDATALIFECYCLE_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id37DDS_READERDATALIFECYCLE_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id37DDS_READERDATALIFECYCLE_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57aa62ade0f5a05654c5f959dd33bbeb07e"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_READERDATALIFECYCLE_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id37DDS_READERDATALIFECYCLE_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id27DDS_TOPICDATA_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id27DDS_TOPICDATA_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id27DDS_TOPICDATA_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a12f9b3bb36fe960675fe077b11ea99ce"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_TOPICDATA_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id27DDS_TOPICDATA_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id27DDS_GROUPDATA_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id27DDS_GROUPDATA_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id27DDS_GROUPDATA_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57aac3715c5385e49e1b6a995f0f8fdec6f"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_GROUPDATA_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id27DDS_GROUPDATA_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id35DDS_TRANSPORTPRIORITY_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id35DDS_TRANSPORTPRIORITY_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id35DDS_TRANSPORTPRIORITY_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57ab76060ee902af0589e55e15a7a213797"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_TRANSPORTPRIORITY_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id35DDS_TRANSPORTPRIORITY_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id26DDS_LIFESPAN_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id26DDS_LIFESPAN_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id26DDS_LIFESPAN_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a8e8deda6f1b1d576fcea58e66e1eb00b"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_LIFESPAN_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id26DDS_LIFESPAN_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id35DDS_DURABILITYSERVICE_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id35DDS_DURABILITYSERVICE_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id35DDS_DURABILITYSERVICE_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a6e16affba7e7d1abee18b0a8fb5ced47"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DURABILITYSERVICE_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id35DDS_DURABILITYSERVICE_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id26DDS_PROPERTY_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id26DDS_PROPERTY_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id26DDS_PROPERTY_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57ae9f95f958fc0a4616616e9a07ca4a8c4"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_PROPERTY_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id26DDS_PROPERTY_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N17dds_qos_policy_id46DDS_TYPE_CONSISTENCY_ENFORCEMENT_QOS_POLICY_IDE">
+<span id="_CPPv3N17dds_qos_policy_id46DDS_TYPE_CONSISTENCY_ENFORCEMENT_QOS_POLICY_IDE"></span><span id="_CPPv2N17dds_qos_policy_id46DDS_TYPE_CONSISTENCY_ENFORCEMENT_QOS_POLICY_IDE"></span><span class="target" id="dds__public__qosdefs_8h_1a4bb0c71207830a51b6e310eca1106a57a832635ecb9be4de866ea695b9072d74e"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_TYPE_CONSISTENCY_ENFORCEMENT_QOS_POLICY_ID</code><a class="headerlink" href="#_CPPv4N17dds_qos_policy_id46DDS_TYPE_CONSISTENCY_ENFORCEMENT_QOS_POLICY_IDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv419dds_durability_kind">
+<span id="_CPPv319dds_durability_kind"></span><span id="_CPPv219dds_durability_kind"></span><span class="target" id="dds__public__qosdefs_8h_1a361d0c953706f8807226c7d447a4204b"></span><em class="property">enum </em><code class="sig-name descname">dds_durability_kind</code><a class="headerlink" href="#_CPPv419dds_durability_kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Durability QoS: Applies to Topic, DataReader, DataWriter </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19dds_durability_kind23DDS_DURABILITY_VOLATILEE">
+<span id="_CPPv3N19dds_durability_kind23DDS_DURABILITY_VOLATILEE"></span><span id="_CPPv2N19dds_durability_kind23DDS_DURABILITY_VOLATILEE"></span><span class="target" id="dds__public__qosdefs_8h_1a361d0c953706f8807226c7d447a4204ba3dbe2904846b3b0fe3d91666a7d68734"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DURABILITY_VOLATILE</code><a class="headerlink" href="#_CPPv4N19dds_durability_kind23DDS_DURABILITY_VOLATILEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19dds_durability_kind30DDS_DURABILITY_TRANSIENT_LOCALE">
+<span id="_CPPv3N19dds_durability_kind30DDS_DURABILITY_TRANSIENT_LOCALE"></span><span id="_CPPv2N19dds_durability_kind30DDS_DURABILITY_TRANSIENT_LOCALE"></span><span class="target" id="dds__public__qosdefs_8h_1a361d0c953706f8807226c7d447a4204baf8707c032253e97b131505bbd5754638"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DURABILITY_TRANSIENT_LOCAL</code><a class="headerlink" href="#_CPPv4N19dds_durability_kind30DDS_DURABILITY_TRANSIENT_LOCALE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19dds_durability_kind24DDS_DURABILITY_TRANSIENTE">
+<span id="_CPPv3N19dds_durability_kind24DDS_DURABILITY_TRANSIENTE"></span><span id="_CPPv2N19dds_durability_kind24DDS_DURABILITY_TRANSIENTE"></span><span class="target" id="dds__public__qosdefs_8h_1a361d0c953706f8807226c7d447a4204ba7b058634864e4e817d904760610e106f"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DURABILITY_TRANSIENT</code><a class="headerlink" href="#_CPPv4N19dds_durability_kind24DDS_DURABILITY_TRANSIENTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19dds_durability_kind25DDS_DURABILITY_PERSISTENTE">
+<span id="_CPPv3N19dds_durability_kind25DDS_DURABILITY_PERSISTENTE"></span><span id="_CPPv2N19dds_durability_kind25DDS_DURABILITY_PERSISTENTE"></span><span class="target" id="dds__public__qosdefs_8h_1a361d0c953706f8807226c7d447a4204baa338e3c5e5b840c19e6c08c6068a2e9e"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DURABILITY_PERSISTENT</code><a class="headerlink" href="#_CPPv4N19dds_durability_kind25DDS_DURABILITY_PERSISTENTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv416dds_history_kind">
+<span id="_CPPv316dds_history_kind"></span><span id="_CPPv216dds_history_kind"></span><span class="target" id="dds__public__qosdefs_8h_1abe3618212f0903ab8ebb93f359624ca4"></span><em class="property">enum </em><code class="sig-name descname">dds_history_kind</code><a class="headerlink" href="#_CPPv416dds_history_kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>History QoS: Applies to Topic, DataReader, DataWriter </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N16dds_history_kind21DDS_HISTORY_KEEP_LASTE">
+<span id="_CPPv3N16dds_history_kind21DDS_HISTORY_KEEP_LASTE"></span><span id="_CPPv2N16dds_history_kind21DDS_HISTORY_KEEP_LASTE"></span><span class="target" id="dds__public__qosdefs_8h_1abe3618212f0903ab8ebb93f359624ca4a27e1440a886825de67d881ee92384b7b"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_HISTORY_KEEP_LAST</code><a class="headerlink" href="#_CPPv4N16dds_history_kind21DDS_HISTORY_KEEP_LASTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N16dds_history_kind20DDS_HISTORY_KEEP_ALLE">
+<span id="_CPPv3N16dds_history_kind20DDS_HISTORY_KEEP_ALLE"></span><span id="_CPPv2N16dds_history_kind20DDS_HISTORY_KEEP_ALLE"></span><span class="target" id="dds__public__qosdefs_8h_1abe3618212f0903ab8ebb93f359624ca4af39a22d946fe19894b4df289fe4bc36c"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_HISTORY_KEEP_ALL</code><a class="headerlink" href="#_CPPv4N16dds_history_kind20DDS_HISTORY_KEEP_ALLE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv418dds_ownership_kind">
+<span id="_CPPv318dds_ownership_kind"></span><span id="_CPPv218dds_ownership_kind"></span><span class="target" id="dds__public__qosdefs_8h_1a297402b0f21a00cda5c0ce31be71fc4b"></span><em class="property">enum </em><code class="sig-name descname">dds_ownership_kind</code><a class="headerlink" href="#_CPPv418dds_ownership_kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ownership QoS: Applies to Topic, DataReader, DataWriter </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N18dds_ownership_kind20DDS_OWNERSHIP_SHAREDE">
+<span id="_CPPv3N18dds_ownership_kind20DDS_OWNERSHIP_SHAREDE"></span><span id="_CPPv2N18dds_ownership_kind20DDS_OWNERSHIP_SHAREDE"></span><span class="target" id="dds__public__qosdefs_8h_1a297402b0f21a00cda5c0ce31be71fc4baa46a6cc0efe2ea2925bb78692b86fcab"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_OWNERSHIP_SHARED</code><a class="headerlink" href="#_CPPv4N18dds_ownership_kind20DDS_OWNERSHIP_SHAREDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N18dds_ownership_kind23DDS_OWNERSHIP_EXCLUSIVEE">
+<span id="_CPPv3N18dds_ownership_kind23DDS_OWNERSHIP_EXCLUSIVEE"></span><span id="_CPPv2N18dds_ownership_kind23DDS_OWNERSHIP_EXCLUSIVEE"></span><span class="target" id="dds__public__qosdefs_8h_1a297402b0f21a00cda5c0ce31be71fc4badfe663be4cca7c5030760df5a30284c7"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_OWNERSHIP_EXCLUSIVE</code><a class="headerlink" href="#_CPPv4N18dds_ownership_kind23DDS_OWNERSHIP_EXCLUSIVEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv419dds_liveliness_kind">
+<span id="_CPPv319dds_liveliness_kind"></span><span id="_CPPv219dds_liveliness_kind"></span><span class="target" id="dds__public__qosdefs_8h_1a379ecfe89e22ebf7dc03784e60cc85ae"></span><em class="property">enum </em><code class="sig-name descname">dds_liveliness_kind</code><a class="headerlink" href="#_CPPv419dds_liveliness_kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Liveliness QoS: Applies to Topic, DataReader, DataWriter </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19dds_liveliness_kind24DDS_LIVELINESS_AUTOMATICE">
+<span id="_CPPv3N19dds_liveliness_kind24DDS_LIVELINESS_AUTOMATICE"></span><span id="_CPPv2N19dds_liveliness_kind24DDS_LIVELINESS_AUTOMATICE"></span><span class="target" id="dds__public__qosdefs_8h_1a379ecfe89e22ebf7dc03784e60cc85aeaedaddb1d2490fcce61b77e4110316808"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_LIVELINESS_AUTOMATIC</code><a class="headerlink" href="#_CPPv4N19dds_liveliness_kind24DDS_LIVELINESS_AUTOMATICE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19dds_liveliness_kind36DDS_LIVELINESS_MANUAL_BY_PARTICIPANTE">
+<span id="_CPPv3N19dds_liveliness_kind36DDS_LIVELINESS_MANUAL_BY_PARTICIPANTE"></span><span id="_CPPv2N19dds_liveliness_kind36DDS_LIVELINESS_MANUAL_BY_PARTICIPANTE"></span><span class="target" id="dds__public__qosdefs_8h_1a379ecfe89e22ebf7dc03784e60cc85aea0fc35c8840f4059df59e10df643d6938"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_LIVELINESS_MANUAL_BY_PARTICIPANT</code><a class="headerlink" href="#_CPPv4N19dds_liveliness_kind36DDS_LIVELINESS_MANUAL_BY_PARTICIPANTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19dds_liveliness_kind30DDS_LIVELINESS_MANUAL_BY_TOPICE">
+<span id="_CPPv3N19dds_liveliness_kind30DDS_LIVELINESS_MANUAL_BY_TOPICE"></span><span id="_CPPv2N19dds_liveliness_kind30DDS_LIVELINESS_MANUAL_BY_TOPICE"></span><span class="target" id="dds__public__qosdefs_8h_1a379ecfe89e22ebf7dc03784e60cc85aea9bb2073222dacfe262ea5a90a3b2d3b0"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_LIVELINESS_MANUAL_BY_TOPIC</code><a class="headerlink" href="#_CPPv4N19dds_liveliness_kind30DDS_LIVELINESS_MANUAL_BY_TOPICE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv420dds_reliability_kind">
+<span id="_CPPv320dds_reliability_kind"></span><span id="_CPPv220dds_reliability_kind"></span><span class="target" id="dds__public__qosdefs_8h_1a281ecb83c112f3b86df9873704b5c2c3"></span><em class="property">enum </em><code class="sig-name descname">dds_reliability_kind</code><a class="headerlink" href="#_CPPv420dds_reliability_kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reliability QoS: Applies to Topic, DataReader, DataWriter </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N20dds_reliability_kind27DDS_RELIABILITY_BEST_EFFORTE">
+<span id="_CPPv3N20dds_reliability_kind27DDS_RELIABILITY_BEST_EFFORTE"></span><span id="_CPPv2N20dds_reliability_kind27DDS_RELIABILITY_BEST_EFFORTE"></span><span class="target" id="dds__public__qosdefs_8h_1a281ecb83c112f3b86df9873704b5c2c3ad96b79bf383d04944ea71ea396811f43"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_RELIABILITY_BEST_EFFORT</code><a class="headerlink" href="#_CPPv4N20dds_reliability_kind27DDS_RELIABILITY_BEST_EFFORTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N20dds_reliability_kind24DDS_RELIABILITY_RELIABLEE">
+<span id="_CPPv3N20dds_reliability_kind24DDS_RELIABILITY_RELIABLEE"></span><span id="_CPPv2N20dds_reliability_kind24DDS_RELIABILITY_RELIABLEE"></span><span class="target" id="dds__public__qosdefs_8h_1a281ecb83c112f3b86df9873704b5c2c3af5eb376832afbdb96dff1b6c11aa9495"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_RELIABILITY_RELIABLE</code><a class="headerlink" href="#_CPPv4N20dds_reliability_kind24DDS_RELIABILITY_RELIABLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv426dds_destination_order_kind">
+<span id="_CPPv326dds_destination_order_kind"></span><span id="_CPPv226dds_destination_order_kind"></span><span class="target" id="dds__public__qosdefs_8h_1a7824679ad7294c50dfe4d32e6166cfed"></span><em class="property">enum </em><code class="sig-name descname">dds_destination_order_kind</code><a class="headerlink" href="#_CPPv426dds_destination_order_kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>DestinationOrder QoS: Applies to Topic, DataReader, DataWriter </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N26dds_destination_order_kind43DDS_DESTINATIONORDER_BY_RECEPTION_TIMESTAMPE">
+<span id="_CPPv3N26dds_destination_order_kind43DDS_DESTINATIONORDER_BY_RECEPTION_TIMESTAMPE"></span><span id="_CPPv2N26dds_destination_order_kind43DDS_DESTINATIONORDER_BY_RECEPTION_TIMESTAMPE"></span><span class="target" id="dds__public__qosdefs_8h_1a7824679ad7294c50dfe4d32e6166cfeda6369a7acd43706b090a026ebc842bb58"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DESTINATIONORDER_BY_RECEPTION_TIMESTAMP</code><a class="headerlink" href="#_CPPv4N26dds_destination_order_kind43DDS_DESTINATIONORDER_BY_RECEPTION_TIMESTAMPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N26dds_destination_order_kind40DDS_DESTINATIONORDER_BY_SOURCE_TIMESTAMPE">
+<span id="_CPPv3N26dds_destination_order_kind40DDS_DESTINATIONORDER_BY_SOURCE_TIMESTAMPE"></span><span id="_CPPv2N26dds_destination_order_kind40DDS_DESTINATIONORDER_BY_SOURCE_TIMESTAMPE"></span><span class="target" id="dds__public__qosdefs_8h_1a7824679ad7294c50dfe4d32e6166cfeda01e556545289f3f3657b0f9f08e65427"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_DESTINATIONORDER_BY_SOURCE_TIMESTAMP</code><a class="headerlink" href="#_CPPv4N26dds_destination_order_kind40DDS_DESTINATIONORDER_BY_SOURCE_TIMESTAMPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv434dds_presentation_access_scope_kind">
+<span id="_CPPv334dds_presentation_access_scope_kind"></span><span id="_CPPv234dds_presentation_access_scope_kind"></span><span class="target" id="dds__public__qosdefs_8h_1abd56f99be3abaa9f8a9780da63683e46"></span><em class="property">enum </em><code class="sig-name descname">dds_presentation_access_scope_kind</code><a class="headerlink" href="#_CPPv434dds_presentation_access_scope_kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Presentation QoS: Applies to Publisher, Subscriber </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N34dds_presentation_access_scope_kind25DDS_PRESENTATION_INSTANCEE">
+<span id="_CPPv3N34dds_presentation_access_scope_kind25DDS_PRESENTATION_INSTANCEE"></span><span id="_CPPv2N34dds_presentation_access_scope_kind25DDS_PRESENTATION_INSTANCEE"></span><span class="target" id="dds__public__qosdefs_8h_1abd56f99be3abaa9f8a9780da63683e46ad2d70d31c797f3f1a59cc5a5c56e2ae5"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_PRESENTATION_INSTANCE</code><a class="headerlink" href="#_CPPv4N34dds_presentation_access_scope_kind25DDS_PRESENTATION_INSTANCEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N34dds_presentation_access_scope_kind22DDS_PRESENTATION_TOPICE">
+<span id="_CPPv3N34dds_presentation_access_scope_kind22DDS_PRESENTATION_TOPICE"></span><span id="_CPPv2N34dds_presentation_access_scope_kind22DDS_PRESENTATION_TOPICE"></span><span class="target" id="dds__public__qosdefs_8h_1abd56f99be3abaa9f8a9780da63683e46a486a06ccf47fae69c9347767e0036507"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_PRESENTATION_TOPIC</code><a class="headerlink" href="#_CPPv4N34dds_presentation_access_scope_kind22DDS_PRESENTATION_TOPICE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N34dds_presentation_access_scope_kind22DDS_PRESENTATION_GROUPE">
+<span id="_CPPv3N34dds_presentation_access_scope_kind22DDS_PRESENTATION_GROUPE"></span><span id="_CPPv2N34dds_presentation_access_scope_kind22DDS_PRESENTATION_GROUPE"></span><span class="target" id="dds__public__qosdefs_8h_1abd56f99be3abaa9f8a9780da63683e46af67f594f8b8a2afa18523416d8250971"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_PRESENTATION_GROUP</code><a class="headerlink" href="#_CPPv4N34dds_presentation_access_scope_kind22DDS_PRESENTATION_GROUPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv420dds_ignorelocal_kind">
+<span id="_CPPv320dds_ignorelocal_kind"></span><span id="_CPPv220dds_ignorelocal_kind"></span><span class="target" id="dds__public__qosdefs_8h_1aab82cd770a6c832d8c4a7b715f829ee9"></span><em class="property">enum </em><code class="sig-name descname">dds_ignorelocal_kind</code><a class="headerlink" href="#_CPPv420dds_ignorelocal_kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Ignore-local QoS: Applies to DataReader, DataWriter </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N20dds_ignorelocal_kind20DDS_IGNORELOCAL_NONEE">
+<span id="_CPPv3N20dds_ignorelocal_kind20DDS_IGNORELOCAL_NONEE"></span><span id="_CPPv2N20dds_ignorelocal_kind20DDS_IGNORELOCAL_NONEE"></span><span class="target" id="dds__public__qosdefs_8h_1aab82cd770a6c832d8c4a7b715f829ee9a7ccfbad843301930c126771a940c360c"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_IGNORELOCAL_NONE</code><a class="headerlink" href="#_CPPv4N20dds_ignorelocal_kind20DDS_IGNORELOCAL_NONEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N20dds_ignorelocal_kind27DDS_IGNORELOCAL_PARTICIPANTE">
+<span id="_CPPv3N20dds_ignorelocal_kind27DDS_IGNORELOCAL_PARTICIPANTE"></span><span id="_CPPv2N20dds_ignorelocal_kind27DDS_IGNORELOCAL_PARTICIPANTE"></span><span class="target" id="dds__public__qosdefs_8h_1aab82cd770a6c832d8c4a7b715f829ee9aed3ac6d403199d8324af82a98fbfb942"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_IGNORELOCAL_PARTICIPANT</code><a class="headerlink" href="#_CPPv4N20dds_ignorelocal_kind27DDS_IGNORELOCAL_PARTICIPANTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N20dds_ignorelocal_kind23DDS_IGNORELOCAL_PROCESSE">
+<span id="_CPPv3N20dds_ignorelocal_kind23DDS_IGNORELOCAL_PROCESSE"></span><span id="_CPPv2N20dds_ignorelocal_kind23DDS_IGNORELOCAL_PROCESSE"></span><span class="target" id="dds__public__qosdefs_8h_1aab82cd770a6c832d8c4a7b715f829ee9ad97ac07351e472b8cfbc8c396dcd70a6"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_IGNORELOCAL_PROCESS</code><a class="headerlink" href="#_CPPv4N20dds_ignorelocal_kind23DDS_IGNORELOCAL_PROCESSE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt id="_CPPv425dds_type_consistency_kind">
+<span id="_CPPv325dds_type_consistency_kind"></span><span id="_CPPv225dds_type_consistency_kind"></span><span class="target" id="dds__public__qosdefs_8h_1a9c560ff2787cb224e653c53c977edf05"></span><em class="property">enum </em><code class="sig-name descname">dds_type_consistency_kind</code><a class="headerlink" href="#_CPPv425dds_type_consistency_kind" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N25dds_type_consistency_kind43DDS_TYPE_CONSISTENCY_DISALLOW_TYPE_COERCIONE">
+<span id="_CPPv3N25dds_type_consistency_kind43DDS_TYPE_CONSISTENCY_DISALLOW_TYPE_COERCIONE"></span><span id="_CPPv2N25dds_type_consistency_kind43DDS_TYPE_CONSISTENCY_DISALLOW_TYPE_COERCIONE"></span><span class="target" id="dds__public__qosdefs_8h_1a9c560ff2787cb224e653c53c977edf05a921c921a445d8d4175fb6eac80979a34"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_TYPE_CONSISTENCY_DISALLOW_TYPE_COERCION</code><a class="headerlink" href="#_CPPv4N25dds_type_consistency_kind43DDS_TYPE_CONSISTENCY_DISALLOW_TYPE_COERCIONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N25dds_type_consistency_kind40DDS_TYPE_CONSISTENCY_ALLOW_TYPE_COERCIONE">
+<span id="_CPPv3N25dds_type_consistency_kind40DDS_TYPE_CONSISTENCY_ALLOW_TYPE_COERCIONE"></span><span id="_CPPv2N25dds_type_consistency_kind40DDS_TYPE_CONSISTENCY_ALLOW_TYPE_COERCIONE"></span><span class="target" id="dds__public__qosdefs_8h_1a9c560ff2787cb224e653c53c977edf05a81f321fb56bfd79bca2143a4aaa3fe67"></span><em class="property">enumerator </em><code class="sig-name descname">DDS_TYPE_CONSISTENCY_ALLOW_TYPE_COERCION</code><a class="headerlink" href="#_CPPv4N25dds_type_consistency_kind40DDS_TYPE_CONSISTENCY_ALLOW_TYPE_COERCIONE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dds__public__status_8h.html" class="btn btn-neutral float-right" title="File dds_public_status.h" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dds__public__qos_8h.html" class="btn btn-neutral float-left" title="File dds_public_qos.h" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, CycloneDDS committers
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
