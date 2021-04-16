@@ -1,0 +1,5 @@
+Struct dds_requested_incompatible_qos_status
+============================================
+
+.. doxygenstruct:: dds_requested_incompatible_qos_status
+   :project: ddsc_api_docs

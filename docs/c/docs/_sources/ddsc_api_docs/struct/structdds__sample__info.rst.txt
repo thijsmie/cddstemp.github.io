@@ -1,0 +1,5 @@
+Struct dds_sample_info
+======================
+
+.. doxygenstruct:: dds_sample_info
+   :project: ddsc_api_docs

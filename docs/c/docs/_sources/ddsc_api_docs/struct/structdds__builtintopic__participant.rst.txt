@@ -1,0 +1,5 @@
+Struct dds_builtintopic_participant
+===================================
+
+.. doxygenstruct:: dds_builtintopic_participant
+   :project: ddsc_api_docs

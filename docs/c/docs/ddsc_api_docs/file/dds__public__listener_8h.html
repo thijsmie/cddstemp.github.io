@@ -1,0 +1,784 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>File dds_public_listener.h &mdash; CycloneDDS 0.7.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File dds_public_qos.h" href="dds__public__qos_8h.html" />
+    <link rel="prev" title="File dds_public_impl.h" href="dds__public__impl_8h.html" />
+    <link href="../../_static/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> CycloneDDS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/installation.html">Installing Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld.html">Building Eclipse Cyclone DDS applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/helloworld_indepth.html">Hello World! in more detail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/next_steps.html">What’s next?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GettingStartedGuide/uninstall.html">Uninstalling Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../filelist.html">File list</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="dds_8h.html">File dds.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__internal__api_8h.html">File dds_internal_api.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__alloc_8h.html">File dds_public_alloc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__error_8h.html">File dds_public_error.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__impl_8h.html">File dds_public_impl.h</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">File dds_public_listener.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__qos_8h.html">File dds_public_qos.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__qosdefs_8h.html">File dds_public_qosdefs.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__public__status_8h.html">File dds_public_status.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__rhc_8h.html">File dds_rhc.h</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dds__statistics_8h.html">File dds_statistics.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../structlist.html">Struct list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../unionlist.html">Union list</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../config.html">A guide to the configuration options of Eclipse Cyclone DDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../security.html">DDS Security</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">CycloneDDS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../ddsc.html">Eclipse Cyclone DDS C API Reference</a> &raquo;</li>
+        
+          <li><a href="../filelist.html">File list</a> &raquo;</li>
+        
+      <li>File dds_public_listener.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/ddsc_api_docs/file/dds__public__listener_8h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-dds-public-listener-h">
+<h1>File dds_public_listener.h<a class="headerlink" href="#file-dds-public-listener-h" title="Permalink to this headline">¶</a></h1>
+<p>DDS C Listener API. </p>
+<p>This header file defines the public API of listeners in the Eclipse Cyclone DDS C language binding. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt id="c.DDS_LUNSET">
+<span class="target" id="dds__public__listener_8h_1a1eff6d9d09533882ff2a2703541d6d27"></span><code class="sig-name descname"><span class="pre">DDS_LUNSET</span></code><a class="headerlink" href="#c.DDS_LUNSET" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt id="_CPPv428dds_on_inconsistent_topic_fn">
+<span id="_CPPv328dds_on_inconsistent_topic_fn"></span><span id="_CPPv228dds_on_inconsistent_topic_fn"></span><span id="dds_on_inconsistent_topic_fn"></span><span class="target" id="dds__public__listener_8h_1a5f20136551064e5931afc10b82f2ead1"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_inconsistent_topic_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">topic</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv431dds_inconsistent_topic_status_t" title="dds_inconsistent_topic_status_t"><span class="pre">dds_inconsistent_topic_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428dds_on_inconsistent_topic_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv425dds_on_liveliness_lost_fn">
+<span id="_CPPv325dds_on_liveliness_lost_fn"></span><span id="_CPPv225dds_on_liveliness_lost_fn"></span><span id="dds_on_liveliness_lost_fn"></span><span class="target" id="dds__public__listener_8h_1a72aba521896da3193ff2433ce651a469"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_liveliness_lost_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">writer</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv428dds_liveliness_lost_status_t" title="dds_liveliness_lost_status_t"><span class="pre">dds_liveliness_lost_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425dds_on_liveliness_lost_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv433dds_on_offered_deadline_missed_fn">
+<span id="_CPPv333dds_on_offered_deadline_missed_fn"></span><span id="_CPPv233dds_on_offered_deadline_missed_fn"></span><span id="dds_on_offered_deadline_missed_fn"></span><span class="target" id="dds__public__listener_8h_1a16a1ae82a17371bcfba8279207ac6b8c"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_offered_deadline_missed_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">writer</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv436dds_offered_deadline_missed_status_t" title="dds_offered_deadline_missed_status_t"><span class="pre">dds_offered_deadline_missed_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433dds_on_offered_deadline_missed_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv434dds_on_offered_incompatible_qos_fn">
+<span id="_CPPv334dds_on_offered_incompatible_qos_fn"></span><span id="_CPPv234dds_on_offered_incompatible_qos_fn"></span><span id="dds_on_offered_incompatible_qos_fn"></span><span class="target" id="dds__public__listener_8h_1a02cc1c0344ea0f2592d3524770c7f399"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_offered_incompatible_qos_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">writer</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv437dds_offered_incompatible_qos_status_t" title="dds_offered_incompatible_qos_status_t"><span class="pre">dds_offered_incompatible_qos_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434dds_on_offered_incompatible_qos_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv425dds_on_data_on_readers_fn">
+<span id="_CPPv325dds_on_data_on_readers_fn"></span><span id="_CPPv225dds_on_data_on_readers_fn"></span><span id="dds_on_data_on_readers_fn"></span><span class="target" id="dds__public__listener_8h_1aa0b50b63ef62e8f7a79ed82cd23a051b"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_data_on_readers_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">subscriber</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425dds_on_data_on_readers_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv421dds_on_sample_lost_fn">
+<span id="_CPPv321dds_on_sample_lost_fn"></span><span id="_CPPv221dds_on_sample_lost_fn"></span><span id="dds_on_sample_lost_fn"></span><span class="target" id="dds__public__listener_8h_1ac9d86c16b835bbb9a456872cbf9e93c3"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_sample_lost_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">reader</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv424dds_sample_lost_status_t" title="dds_sample_lost_status_t"><span class="pre">dds_sample_lost_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421dds_on_sample_lost_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv424dds_on_data_available_fn">
+<span id="_CPPv324dds_on_data_available_fn"></span><span id="_CPPv224dds_on_data_available_fn"></span><span id="dds_on_data_available_fn"></span><span class="target" id="dds__public__listener_8h_1aeb5c8ba1049b18649094d936587b4e73"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_data_available_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">reader</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424dds_on_data_available_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv425dds_on_sample_rejected_fn">
+<span id="_CPPv325dds_on_sample_rejected_fn"></span><span id="_CPPv225dds_on_sample_rejected_fn"></span><span id="dds_on_sample_rejected_fn"></span><span class="target" id="dds__public__listener_8h_1a800f2c90fed43dcd50c704a66e74dbda"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_sample_rejected_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">reader</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv428dds_sample_rejected_status_t" title="dds_sample_rejected_status_t"><span class="pre">dds_sample_rejected_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425dds_on_sample_rejected_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv428dds_on_liveliness_changed_fn">
+<span id="_CPPv328dds_on_liveliness_changed_fn"></span><span id="_CPPv228dds_on_liveliness_changed_fn"></span><span id="dds_on_liveliness_changed_fn"></span><span class="target" id="dds__public__listener_8h_1aa5d7a2b5886f7a1fcfde4b4d00f83ef2"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_liveliness_changed_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">reader</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv431dds_liveliness_changed_status_t" title="dds_liveliness_changed_status_t"><span class="pre">dds_liveliness_changed_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428dds_on_liveliness_changed_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv435dds_on_requested_deadline_missed_fn">
+<span id="_CPPv335dds_on_requested_deadline_missed_fn"></span><span id="_CPPv235dds_on_requested_deadline_missed_fn"></span><span id="dds_on_requested_deadline_missed_fn"></span><span class="target" id="dds__public__listener_8h_1a6a07756f06d5b4f8890ca1c1854935ad"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_requested_deadline_missed_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">reader</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv438dds_requested_deadline_missed_status_t" title="dds_requested_deadline_missed_status_t"><span class="pre">dds_requested_deadline_missed_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv435dds_on_requested_deadline_missed_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv436dds_on_requested_incompatible_qos_fn">
+<span id="_CPPv336dds_on_requested_incompatible_qos_fn"></span><span id="_CPPv236dds_on_requested_incompatible_qos_fn"></span><span id="dds_on_requested_incompatible_qos_fn"></span><span class="target" id="dds__public__listener_8h_1a3b4ad9e7b28f6b26dcd23e3fb2c14be1"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_requested_incompatible_qos_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">reader</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv439dds_requested_incompatible_qos_status_t" title="dds_requested_incompatible_qos_status_t"><span class="pre">dds_requested_incompatible_qos_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv436dds_on_requested_incompatible_qos_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv429dds_on_publication_matched_fn">
+<span id="_CPPv329dds_on_publication_matched_fn"></span><span id="_CPPv229dds_on_publication_matched_fn"></span><span id="dds_on_publication_matched_fn"></span><span class="target" id="dds__public__listener_8h_1a5ed7ab3913b8f1ba752ad98010a65919"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_publication_matched_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">writer</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv432dds_publication_matched_status_t" title="dds_publication_matched_status_t"><span class="pre">dds_publication_matched_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429dds_on_publication_matched_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv430dds_on_subscription_matched_fn">
+<span id="_CPPv330dds_on_subscription_matched_fn"></span><span id="_CPPv230dds_on_subscription_matched_fn"></span><span id="dds_on_subscription_matched_fn"></span><span class="target" id="dds__public__listener_8h_1a66f527e7292c35bd9d18eef2ccb2b001"></span><em class="property"><span class="pre">typedef</span> </em><span class="pre">void</span> <span class="pre">(</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_on_subscription_matched_fn</span></code><span class="pre">)</span><span class="sig-paren">(</span><a class="reference internal" href="dds_8h.html#_CPPv412dds_entity_t" title="dds_entity_t"><span class="pre">dds_entity_t</span></a> <span class="pre">reader</span>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="dds__public__status_8h.html#_CPPv433dds_subscription_matched_status_t" title="dds_subscription_matched_status_t"><span class="pre">dds_subscription_matched_status_t</span></a> <span class="pre">status</span>, <span class="pre">void</span> <span class="pre">*</span><span class="pre">arg</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430dds_on_subscription_matched_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv414dds_listener_t">
+<span id="_CPPv314dds_listener_t"></span><span id="_CPPv214dds_listener_t"></span><span id="dds_listener_t"></span><span class="target" id="dds__public__listener_8h_1abea4a7f035d91f86e036ed764f7b3731"></span><em class="property"><span class="pre">typedef</span> </em><em class="property"><span class="pre">struct</span></em> <span class="pre">dds_listener</span> <code class="sig-name descname"><span class="pre">dds_listener_t</span></code><a class="headerlink" href="#_CPPv414dds_listener_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv419dds_create_listenerPv">
+<span id="_CPPv319dds_create_listenerPv"></span><span id="_CPPv219dds_create_listenerPv"></span><span id="dds_create_listener__voidP"></span><span class="target" id="dds__public__listener_8h_1ad0efe47c590bb71dc3a29b7aa5eb8890"></span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_create_listener</span></code><span class="sig-paren">(</span><span class="pre">void</span> <span class="pre">*</span><em><span class="pre">arg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_create_listenerPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Allocate memory and initializes to default values (::DDS_LUNSET) of a listener. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] arg</strong> – optional pointer that will be passed on to the listener callbacks</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns a pointer to the allocated memory for dds_listener_t structure. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419dds_listener_createPv">
+<span id="_CPPv319dds_listener_createPv"></span><span id="_CPPv219dds_listener_createPv"></span><span id="dds_listener_create__voidP"></span><span class="target" id="dds__public__listener_8h_1adb8c5c97304cc06f6202b6ed88081623"></span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><code class="sig-name descname"><span class="pre">dds_listener_create</span></code><span class="sig-paren">(</span><span class="pre">void</span> <span class="pre">*</span><em><span class="pre">arg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_listener_createPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419dds_delete_listenerP14dds_listener_t">
+<span id="_CPPv319dds_delete_listenerP14dds_listener_t"></span><span id="_CPPv219dds_delete_listenerP14dds_listener_t"></span><span id="dds_delete_listener__dds_listener_tP"></span><span class="target" id="dds__public__listener_8h_1a5ada2f32f0b9453591dad29cbdc0db4d"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_delete_listener</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_delete_listenerP14dds_listener_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Delete the memory allocated to listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[in] listener</strong> – pointer to the listener struct to delete </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv419dds_listener_deleteP14dds_listener_t">
+<span id="_CPPv319dds_listener_deleteP14dds_listener_t"></span><span id="_CPPv219dds_listener_deleteP14dds_listener_t"></span><span id="dds_listener_delete__dds_listener_tP"></span><span class="target" id="dds__public__listener_8h_1ae34bc6171528d10f1a12803f6a2e8969"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_listener_delete</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419dds_listener_deleteP14dds_listener_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_reset_listenerP14dds_listener_t">
+<span id="_CPPv318dds_reset_listenerP14dds_listener_t"></span><span id="_CPPv218dds_reset_listenerP14dds_listener_t"></span><span id="dds_reset_listener__dds_listener_tP"></span><span class="target" id="dds__public__listener_8h_1a63df5d862c81b8a7c146107d6db7ebd7"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_reset_listener</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_reset_listenerP14dds_listener_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Reset the listener structure contents to ::DDS_LUNSET. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>[inout] listener</strong> – pointer to the listener struct to reset </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_listener_resetP14dds_listener_t">
+<span id="_CPPv318dds_listener_resetP14dds_listener_t"></span><span id="_CPPv218dds_listener_resetP14dds_listener_t"></span><span id="dds_listener_reset__dds_listener_tP"></span><span class="target" id="dds__public__listener_8h_1a42b6450e2d0511504a2a9fb6caa1b1b7"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_listener_reset</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_listener_resetP14dds_listener_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417dds_copy_listenerP14dds_listener_tPK14dds_listener_t">
+<span id="_CPPv317dds_copy_listenerP14dds_listener_tPK14dds_listener_t"></span><span id="_CPPv217dds_copy_listenerP14dds_listener_tPK14dds_listener_t"></span><span id="dds_copy_listener__dds_listener_tP.dds_listener_tCP"></span><span class="target" id="dds__public__listener_8h_1a190627416dd470f921d2be4a40bb6352"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_copy_listener</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">dst</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417dds_copy_listenerP14dds_listener_tPK14dds_listener_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy the listener callbacks from source to destination. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] dst</strong> – The pointer to the destination listener structure, where the content is to copied </p></li>
+<li><p><strong>[in] src</strong> – The pointer to the source listener structure to be copied </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv417dds_listener_copyP14dds_listener_tPK14dds_listener_t">
+<span id="_CPPv317dds_listener_copyP14dds_listener_tPK14dds_listener_t"></span><span id="_CPPv217dds_listener_copyP14dds_listener_tPK14dds_listener_t"></span><span id="dds_listener_copy__dds_listener_tP.dds_listener_tCP"></span><span class="target" id="dds__public__listener_8h_1abbaa2e08ba38c8e658eca1a158d20afe"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_listener_copy</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">dst</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417dds_listener_copyP14dds_listener_tPK14dds_listener_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_merge_listenerP14dds_listener_tPK14dds_listener_t">
+<span id="_CPPv318dds_merge_listenerP14dds_listener_tPK14dds_listener_t"></span><span id="_CPPv218dds_merge_listenerP14dds_listener_tPK14dds_listener_t"></span><span id="dds_merge_listener__dds_listener_tP.dds_listener_tCP"></span><span class="target" id="dds__public__listener_8h_1af96d05a4f6cce39a03fbefc88828aacd"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_merge_listener</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">dst</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_merge_listenerP14dds_listener_tPK14dds_listener_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Copy the listener callbacks from source to destination, unless already set. </p>
+<p>Any listener callbacks already set in <code class="docutils literal notranslate"><span class="pre">dst</span></code> (including NULL) are skipped, only those set to DDS_LUNSET are copied from <code class="docutils literal notranslate"><span class="pre">src</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] dst</strong> – The pointer to the destination listener structure, where the content is merged </p></li>
+<li><p><strong>[in] src</strong> – The pointer to the source listener structure to be copied </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv418dds_listener_mergeP14dds_listener_tPK14dds_listener_t">
+<span id="_CPPv318dds_listener_mergeP14dds_listener_tPK14dds_listener_t"></span><span id="_CPPv218dds_listener_mergeP14dds_listener_tPK14dds_listener_t"></span><span id="dds_listener_merge__dds_listener_tP.dds_listener_tCP"></span><span class="target" id="dds__public__listener_8h_1ace90fe5fab60e6eb95d458b16b2faac8"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_listener_merge</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">dst</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418dds_listener_mergeP14dds_listener_tPK14dds_listener_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_lset_inconsistent_topicP14dds_listener_t28dds_on_inconsistent_topic_fn">
+<span id="_CPPv327dds_lset_inconsistent_topicP14dds_listener_t28dds_on_inconsistent_topic_fn"></span><span id="_CPPv227dds_lset_inconsistent_topicP14dds_listener_t28dds_on_inconsistent_topic_fn"></span><span id="dds_lset_inconsistent_topic__dds_listener_tP.dds_on_inconsistent_topic_fn"></span><span class="target" id="dds__public__listener_8h_1a18f0d9b311cf6f6a7ccba178d829cc95"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_inconsistent_topic</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv428dds_on_inconsistent_topic_fn" title="dds_on_inconsistent_topic_fn"><span class="pre">dds_on_inconsistent_topic_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_lset_inconsistent_topicP14dds_listener_t28dds_on_inconsistent_topic_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the inconsistent_topic callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424dds_lset_liveliness_lostP14dds_listener_t25dds_on_liveliness_lost_fn">
+<span id="_CPPv324dds_lset_liveliness_lostP14dds_listener_t25dds_on_liveliness_lost_fn"></span><span id="_CPPv224dds_lset_liveliness_lostP14dds_listener_t25dds_on_liveliness_lost_fn"></span><span id="dds_lset_liveliness_lost__dds_listener_tP.dds_on_liveliness_lost_fn"></span><span class="target" id="dds__public__listener_8h_1a7e3006a78ba9823c5612e1a25da2d249"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_liveliness_lost</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv425dds_on_liveliness_lost_fn" title="dds_on_liveliness_lost_fn"><span class="pre">dds_on_liveliness_lost_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424dds_lset_liveliness_lostP14dds_listener_t25dds_on_liveliness_lost_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the liveliness_lost callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[out] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv432dds_lset_offered_deadline_missedP14dds_listener_t33dds_on_offered_deadline_missed_fn">
+<span id="_CPPv332dds_lset_offered_deadline_missedP14dds_listener_t33dds_on_offered_deadline_missed_fn"></span><span id="_CPPv232dds_lset_offered_deadline_missedP14dds_listener_t33dds_on_offered_deadline_missed_fn"></span><span id="dds_lset_offered_deadline_missed__dds_listener_tP.dds_on_offered_deadline_missed_fn"></span><span class="target" id="dds__public__listener_8h_1a9a19bf717d285e80c63ff30bbda37179"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_offered_deadline_missed</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv433dds_on_offered_deadline_missed_fn" title="dds_on_offered_deadline_missed_fn"><span class="pre">dds_on_offered_deadline_missed_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432dds_lset_offered_deadline_missedP14dds_listener_t33dds_on_offered_deadline_missed_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the offered_deadline_missed callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv433dds_lset_offered_incompatible_qosP14dds_listener_t34dds_on_offered_incompatible_qos_fn">
+<span id="_CPPv333dds_lset_offered_incompatible_qosP14dds_listener_t34dds_on_offered_incompatible_qos_fn"></span><span id="_CPPv233dds_lset_offered_incompatible_qosP14dds_listener_t34dds_on_offered_incompatible_qos_fn"></span><span id="dds_lset_offered_incompatible_qos__dds_listener_tP.dds_on_offered_incompatible_qos_fn"></span><span class="target" id="dds__public__listener_8h_1a1c4be441ebe0b11c1229f1b3b099a721"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_offered_incompatible_qos</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv434dds_on_offered_incompatible_qos_fn" title="dds_on_offered_incompatible_qos_fn"><span class="pre">dds_on_offered_incompatible_qos_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433dds_lset_offered_incompatible_qosP14dds_listener_t34dds_on_offered_incompatible_qos_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the offered_incompatible_qos callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424dds_lset_data_on_readersP14dds_listener_t25dds_on_data_on_readers_fn">
+<span id="_CPPv324dds_lset_data_on_readersP14dds_listener_t25dds_on_data_on_readers_fn"></span><span id="_CPPv224dds_lset_data_on_readersP14dds_listener_t25dds_on_data_on_readers_fn"></span><span id="dds_lset_data_on_readers__dds_listener_tP.dds_on_data_on_readers_fn"></span><span class="target" id="dds__public__listener_8h_1ab4ee39a2a3a59adc93046e39a215e07a"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_data_on_readers</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv425dds_on_data_on_readers_fn" title="dds_on_data_on_readers_fn"><span class="pre">dds_on_data_on_readers_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424dds_lset_data_on_readersP14dds_listener_t25dds_on_data_on_readers_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the data_on_readers callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420dds_lset_sample_lostP14dds_listener_t21dds_on_sample_lost_fn">
+<span id="_CPPv320dds_lset_sample_lostP14dds_listener_t21dds_on_sample_lost_fn"></span><span id="_CPPv220dds_lset_sample_lostP14dds_listener_t21dds_on_sample_lost_fn"></span><span id="dds_lset_sample_lost__dds_listener_tP.dds_on_sample_lost_fn"></span><span class="target" id="dds__public__listener_8h_1a8b06ca85d07cae2771682c17fc75a2d1"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_sample_lost</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv421dds_on_sample_lost_fn" title="dds_on_sample_lost_fn"><span class="pre">dds_on_sample_lost_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420dds_lset_sample_lostP14dds_listener_t21dds_on_sample_lost_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the sample_lost callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423dds_lset_data_availableP14dds_listener_t24dds_on_data_available_fn">
+<span id="_CPPv323dds_lset_data_availableP14dds_listener_t24dds_on_data_available_fn"></span><span id="_CPPv223dds_lset_data_availableP14dds_listener_t24dds_on_data_available_fn"></span><span id="dds_lset_data_available__dds_listener_tP.dds_on_data_available_fn"></span><span class="target" id="dds__public__listener_8h_1add64bb8e641bcb8646e055dfa56f6465"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_data_available</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv424dds_on_data_available_fn" title="dds_on_data_available_fn"><span class="pre">dds_on_data_available_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423dds_lset_data_availableP14dds_listener_t24dds_on_data_available_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the data_available callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424dds_lset_sample_rejectedP14dds_listener_t25dds_on_sample_rejected_fn">
+<span id="_CPPv324dds_lset_sample_rejectedP14dds_listener_t25dds_on_sample_rejected_fn"></span><span id="_CPPv224dds_lset_sample_rejectedP14dds_listener_t25dds_on_sample_rejected_fn"></span><span id="dds_lset_sample_rejected__dds_listener_tP.dds_on_sample_rejected_fn"></span><span class="target" id="dds__public__listener_8h_1a149bf5942ba405d3984b46d0fb4d8c85"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_sample_rejected</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv425dds_on_sample_rejected_fn" title="dds_on_sample_rejected_fn"><span class="pre">dds_on_sample_rejected_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424dds_lset_sample_rejectedP14dds_listener_t25dds_on_sample_rejected_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the sample_rejected callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_lset_liveliness_changedP14dds_listener_t28dds_on_liveliness_changed_fn">
+<span id="_CPPv327dds_lset_liveliness_changedP14dds_listener_t28dds_on_liveliness_changed_fn"></span><span id="_CPPv227dds_lset_liveliness_changedP14dds_listener_t28dds_on_liveliness_changed_fn"></span><span id="dds_lset_liveliness_changed__dds_listener_tP.dds_on_liveliness_changed_fn"></span><span class="target" id="dds__public__listener_8h_1a2ac51b8bb489af65680e729217b42cdd"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_liveliness_changed</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv428dds_on_liveliness_changed_fn" title="dds_on_liveliness_changed_fn"><span class="pre">dds_on_liveliness_changed_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_lset_liveliness_changedP14dds_listener_t28dds_on_liveliness_changed_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the liveliness_changed callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv434dds_lset_requested_deadline_missedP14dds_listener_t35dds_on_requested_deadline_missed_fn">
+<span id="_CPPv334dds_lset_requested_deadline_missedP14dds_listener_t35dds_on_requested_deadline_missed_fn"></span><span id="_CPPv234dds_lset_requested_deadline_missedP14dds_listener_t35dds_on_requested_deadline_missed_fn"></span><span id="dds_lset_requested_deadline_missed__dds_listener_tP.dds_on_requested_deadline_missed_fn"></span><span class="target" id="dds__public__listener_8h_1a1ef0813c147c40fc96101a2af6e6d8aa"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_requested_deadline_missed</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv435dds_on_requested_deadline_missed_fn" title="dds_on_requested_deadline_missed_fn"><span class="pre">dds_on_requested_deadline_missed_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434dds_lset_requested_deadline_missedP14dds_listener_t35dds_on_requested_deadline_missed_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the requested_deadline_missed callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv435dds_lset_requested_incompatible_qosP14dds_listener_t36dds_on_requested_incompatible_qos_fn">
+<span id="_CPPv335dds_lset_requested_incompatible_qosP14dds_listener_t36dds_on_requested_incompatible_qos_fn"></span><span id="_CPPv235dds_lset_requested_incompatible_qosP14dds_listener_t36dds_on_requested_incompatible_qos_fn"></span><span id="dds_lset_requested_incompatible_qos__dds_listener_tP.dds_on_requested_incompatible_qos_fn"></span><span class="target" id="dds__public__listener_8h_1a21139cb76cb7db787563f25ac2a66954"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_requested_incompatible_qos</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv436dds_on_requested_incompatible_qos_fn" title="dds_on_requested_incompatible_qos_fn"><span class="pre">dds_on_requested_incompatible_qos_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv435dds_lset_requested_incompatible_qosP14dds_listener_t36dds_on_requested_incompatible_qos_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the requested_incompatible_qos callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv428dds_lset_publication_matchedP14dds_listener_t29dds_on_publication_matched_fn">
+<span id="_CPPv328dds_lset_publication_matchedP14dds_listener_t29dds_on_publication_matched_fn"></span><span id="_CPPv228dds_lset_publication_matchedP14dds_listener_t29dds_on_publication_matched_fn"></span><span id="dds_lset_publication_matched__dds_listener_tP.dds_on_publication_matched_fn"></span><span class="target" id="dds__public__listener_8h_1af39b079bda5562569ac5dada6ce1d9fd"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_publication_matched</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv429dds_on_publication_matched_fn" title="dds_on_publication_matched_fn"><span class="pre">dds_on_publication_matched_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428dds_lset_publication_matchedP14dds_listener_t29dds_on_publication_matched_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the publication_matched callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv429dds_lset_subscription_matchedP14dds_listener_t30dds_on_subscription_matched_fn">
+<span id="_CPPv329dds_lset_subscription_matchedP14dds_listener_t30dds_on_subscription_matched_fn"></span><span id="_CPPv229dds_lset_subscription_matchedP14dds_listener_t30dds_on_subscription_matched_fn"></span><span id="dds_lset_subscription_matched__dds_listener_tP.dds_on_subscription_matched_fn"></span><span class="target" id="dds__public__listener_8h_1ab6a44853577486cd0d226ada18c35201"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lset_subscription_matched</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv430dds_on_subscription_matched_fn" title="dds_on_subscription_matched_fn"><span class="pre">dds_on_subscription_matched_fn</span></a> <em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429dds_lset_subscription_matchedP14dds_listener_t30dds_on_subscription_matched_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set the subscription_matched callback in the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be set </p></li>
+<li><p><strong>[in] callback</strong> – The callback to set in the listener, can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_lget_inconsistent_topicPK14dds_listener_tP28dds_on_inconsistent_topic_fn">
+<span id="_CPPv327dds_lget_inconsistent_topicPK14dds_listener_tP28dds_on_inconsistent_topic_fn"></span><span id="_CPPv227dds_lget_inconsistent_topicPK14dds_listener_tP28dds_on_inconsistent_topic_fn"></span><span id="dds_lget_inconsistent_topic__dds_listener_tCP.dds_on_inconsistent_topic_fnP"></span><span class="target" id="dds__public__listener_8h_1a68ce58a47ce5a9058c9fb9d20febfb87"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_inconsistent_topic</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv428dds_on_inconsistent_topic_fn" title="dds_on_inconsistent_topic_fn"><span class="pre">dds_on_inconsistent_topic_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_lget_inconsistent_topicPK14dds_listener_tP28dds_on_inconsistent_topic_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the inconsistent_topic callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424dds_lget_liveliness_lostPK14dds_listener_tP25dds_on_liveliness_lost_fn">
+<span id="_CPPv324dds_lget_liveliness_lostPK14dds_listener_tP25dds_on_liveliness_lost_fn"></span><span id="_CPPv224dds_lget_liveliness_lostPK14dds_listener_tP25dds_on_liveliness_lost_fn"></span><span id="dds_lget_liveliness_lost__dds_listener_tCP.dds_on_liveliness_lost_fnP"></span><span class="target" id="dds__public__listener_8h_1a1bc086763e7db7dc549feb53fdefcc89"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_liveliness_lost</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv425dds_on_liveliness_lost_fn" title="dds_on_liveliness_lost_fn"><span class="pre">dds_on_liveliness_lost_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424dds_lget_liveliness_lostPK14dds_listener_tP25dds_on_liveliness_lost_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the liveliness_lost callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv432dds_lget_offered_deadline_missedPK14dds_listener_tP33dds_on_offered_deadline_missed_fn">
+<span id="_CPPv332dds_lget_offered_deadline_missedPK14dds_listener_tP33dds_on_offered_deadline_missed_fn"></span><span id="_CPPv232dds_lget_offered_deadline_missedPK14dds_listener_tP33dds_on_offered_deadline_missed_fn"></span><span id="dds_lget_offered_deadline_missed__dds_listener_tCP.dds_on_offered_deadline_missed_fnP"></span><span class="target" id="dds__public__listener_8h_1af2887fd39903a1fd6f56cfc9bfda6269"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_offered_deadline_missed</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv433dds_on_offered_deadline_missed_fn" title="dds_on_offered_deadline_missed_fn"><span class="pre">dds_on_offered_deadline_missed_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432dds_lget_offered_deadline_missedPK14dds_listener_tP33dds_on_offered_deadline_missed_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the offered_deadline_missed callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv433dds_lget_offered_incompatible_qosPK14dds_listener_tP34dds_on_offered_incompatible_qos_fn">
+<span id="_CPPv333dds_lget_offered_incompatible_qosPK14dds_listener_tP34dds_on_offered_incompatible_qos_fn"></span><span id="_CPPv233dds_lget_offered_incompatible_qosPK14dds_listener_tP34dds_on_offered_incompatible_qos_fn"></span><span id="dds_lget_offered_incompatible_qos__dds_listener_tCP.dds_on_offered_incompatible_qos_fnP"></span><span class="target" id="dds__public__listener_8h_1a2eaf807529469eb81981262138315c09"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_offered_incompatible_qos</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv434dds_on_offered_incompatible_qos_fn" title="dds_on_offered_incompatible_qos_fn"><span class="pre">dds_on_offered_incompatible_qos_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433dds_lget_offered_incompatible_qosPK14dds_listener_tP34dds_on_offered_incompatible_qos_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the offered_incompatible_qos callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424dds_lget_data_on_readersPK14dds_listener_tP25dds_on_data_on_readers_fn">
+<span id="_CPPv324dds_lget_data_on_readersPK14dds_listener_tP25dds_on_data_on_readers_fn"></span><span id="_CPPv224dds_lget_data_on_readersPK14dds_listener_tP25dds_on_data_on_readers_fn"></span><span id="dds_lget_data_on_readers__dds_listener_tCP.dds_on_data_on_readers_fnP"></span><span class="target" id="dds__public__listener_8h_1ad0c8d43df295f822a9ffacde0be9be32"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_data_on_readers</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv425dds_on_data_on_readers_fn" title="dds_on_data_on_readers_fn"><span class="pre">dds_on_data_on_readers_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424dds_lget_data_on_readersPK14dds_listener_tP25dds_on_data_on_readers_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the data_on_readers callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv420dds_lget_sample_lostPK14dds_listener_tP21dds_on_sample_lost_fn">
+<span id="_CPPv320dds_lget_sample_lostPK14dds_listener_tP21dds_on_sample_lost_fn"></span><span id="_CPPv220dds_lget_sample_lostPK14dds_listener_tP21dds_on_sample_lost_fn"></span><span id="dds_lget_sample_lost__dds_listener_tCP.dds_on_sample_lost_fnP"></span><span class="target" id="dds__public__listener_8h_1a4db6f20ec836a745759761a46c1d580b"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_sample_lost</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv421dds_on_sample_lost_fn" title="dds_on_sample_lost_fn"><span class="pre">dds_on_sample_lost_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420dds_lget_sample_lostPK14dds_listener_tP21dds_on_sample_lost_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the sample_lost callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv423dds_lget_data_availablePK14dds_listener_tP24dds_on_data_available_fn">
+<span id="_CPPv323dds_lget_data_availablePK14dds_listener_tP24dds_on_data_available_fn"></span><span id="_CPPv223dds_lget_data_availablePK14dds_listener_tP24dds_on_data_available_fn"></span><span id="dds_lget_data_available__dds_listener_tCP.dds_on_data_available_fnP"></span><span class="target" id="dds__public__listener_8h_1a2c63f65c60bc89509496c20d05ac8823"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_data_available</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv424dds_on_data_available_fn" title="dds_on_data_available_fn"><span class="pre">dds_on_data_available_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423dds_lget_data_availablePK14dds_listener_tP24dds_on_data_available_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the data_available callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv424dds_lget_sample_rejectedPK14dds_listener_tP25dds_on_sample_rejected_fn">
+<span id="_CPPv324dds_lget_sample_rejectedPK14dds_listener_tP25dds_on_sample_rejected_fn"></span><span id="_CPPv224dds_lget_sample_rejectedPK14dds_listener_tP25dds_on_sample_rejected_fn"></span><span id="dds_lget_sample_rejected__dds_listener_tCP.dds_on_sample_rejected_fnP"></span><span class="target" id="dds__public__listener_8h_1a1700dfc356aa81c6a84e4e4f98d293c0"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_sample_rejected</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv425dds_on_sample_rejected_fn" title="dds_on_sample_rejected_fn"><span class="pre">dds_on_sample_rejected_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424dds_lget_sample_rejectedPK14dds_listener_tP25dds_on_sample_rejected_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the sample_rejected callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv427dds_lget_liveliness_changedPK14dds_listener_tP28dds_on_liveliness_changed_fn">
+<span id="_CPPv327dds_lget_liveliness_changedPK14dds_listener_tP28dds_on_liveliness_changed_fn"></span><span id="_CPPv227dds_lget_liveliness_changedPK14dds_listener_tP28dds_on_liveliness_changed_fn"></span><span id="dds_lget_liveliness_changed__dds_listener_tCP.dds_on_liveliness_changed_fnP"></span><span class="target" id="dds__public__listener_8h_1aaee5881bd26b9b2afd61691ff7fcdb73"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_liveliness_changed</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv428dds_on_liveliness_changed_fn" title="dds_on_liveliness_changed_fn"><span class="pre">dds_on_liveliness_changed_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427dds_lget_liveliness_changedPK14dds_listener_tP28dds_on_liveliness_changed_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the liveliness_changed callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv434dds_lget_requested_deadline_missedPK14dds_listener_tP35dds_on_requested_deadline_missed_fn">
+<span id="_CPPv334dds_lget_requested_deadline_missedPK14dds_listener_tP35dds_on_requested_deadline_missed_fn"></span><span id="_CPPv234dds_lget_requested_deadline_missedPK14dds_listener_tP35dds_on_requested_deadline_missed_fn"></span><span id="dds_lget_requested_deadline_missed__dds_listener_tCP.dds_on_requested_deadline_missed_fnP"></span><span class="target" id="dds__public__listener_8h_1a5962ae973b19c4a904480dfbb5c1f9b1"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_requested_deadline_missed</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv435dds_on_requested_deadline_missed_fn" title="dds_on_requested_deadline_missed_fn"><span class="pre">dds_on_requested_deadline_missed_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434dds_lget_requested_deadline_missedPK14dds_listener_tP35dds_on_requested_deadline_missed_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the requested_deadline_missed callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv435dds_lget_requested_incompatible_qosPK14dds_listener_tP36dds_on_requested_incompatible_qos_fn">
+<span id="_CPPv335dds_lget_requested_incompatible_qosPK14dds_listener_tP36dds_on_requested_incompatible_qos_fn"></span><span id="_CPPv235dds_lget_requested_incompatible_qosPK14dds_listener_tP36dds_on_requested_incompatible_qos_fn"></span><span id="dds_lget_requested_incompatible_qos__dds_listener_tCP.dds_on_requested_incompatible_qos_fnP"></span><span class="target" id="dds__public__listener_8h_1a11028cdb8e7354166ba6cbd1e99869d4"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_requested_incompatible_qos</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv436dds_on_requested_incompatible_qos_fn" title="dds_on_requested_incompatible_qos_fn"><span class="pre">dds_on_requested_incompatible_qos_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv435dds_lget_requested_incompatible_qosPK14dds_listener_tP36dds_on_requested_incompatible_qos_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the requested_incompatible_qos callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv428dds_lget_publication_matchedPK14dds_listener_tP29dds_on_publication_matched_fn">
+<span id="_CPPv328dds_lget_publication_matchedPK14dds_listener_tP29dds_on_publication_matched_fn"></span><span id="_CPPv228dds_lget_publication_matchedPK14dds_listener_tP29dds_on_publication_matched_fn"></span><span id="dds_lget_publication_matched__dds_listener_tCP.dds_on_publication_matched_fnP"></span><span class="target" id="dds__public__listener_8h_1ae7fe17a2bed5cf3625b9c36594d49e3f"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_publication_matched</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv429dds_on_publication_matched_fn" title="dds_on_publication_matched_fn"><span class="pre">dds_on_publication_matched_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428dds_lget_publication_matchedPK14dds_listener_tP29dds_on_publication_matched_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the publication_matched callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+<li><p><strong>[inout] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv429dds_lget_subscription_matchedPK14dds_listener_tP30dds_on_subscription_matched_fn">
+<span id="_CPPv329dds_lget_subscription_matchedPK14dds_listener_tP30dds_on_subscription_matched_fn"></span><span id="_CPPv229dds_lget_subscription_matchedPK14dds_listener_tP30dds_on_subscription_matched_fn"></span><span id="dds_lget_subscription_matched__dds_listener_tCP.dds_on_subscription_matched_fnP"></span><span class="target" id="dds__public__listener_8h_1ab8c99bf61fe111bfb954a8d07eacb8ce"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">dds_lget_subscription_matched</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414dds_listener_t" title="dds_listener_t"><span class="pre">dds_listener_t</span></a> <span class="pre">*</span><em><span class="pre">listener</span></em>, <a class="reference internal" href="#_CPPv430dds_on_subscription_matched_fn" title="dds_on_subscription_matched_fn"><span class="pre">dds_on_subscription_matched_fn</span></a> <span class="pre">*</span><em><span class="pre">callback</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429dds_lget_subscription_matchedPK14dds_listener_tP30dds_on_subscription_matched_fn" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the subscription_matched callback from the listener structure. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>[in] callback</strong> – Pointer where the retrieved callback can be stored; can be NULL, ::DDS_LUNSET or a valid callback pointer </p></li>
+<li><p><strong>[inout] listener</strong> – The pointer to the listener structure, where the callback will be retrieved from </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="dds__public__qos_8h.html" class="btn btn-neutral float-right" title="File dds_public_qos.h" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dds__public__impl_8h.html" class="btn btn-neutral float-left" title="File dds_public_impl.h" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, CycloneDDS committers.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

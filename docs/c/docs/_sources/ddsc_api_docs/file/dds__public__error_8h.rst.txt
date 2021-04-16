@@ -1,0 +1,5 @@
+File dds_public_error.h
+=======================
+
+.. doxygenfile:: dds_public_error.h
+   :project: ddsc_api_docs
