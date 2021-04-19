@@ -1,5 +1,0 @@
-Struct dds_statistics
-=====================
-
-.. doxygenstruct:: dds_statistics
-   :project: ddsc_api_docs

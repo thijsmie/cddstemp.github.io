@@ -1,5 +1,0 @@
-Struct dds_liveliness_changed_status
-====================================
-
-.. doxygenstruct:: dds_liveliness_changed_status
-   :project: ddsc_api_docs

@@ -1,5 +1,0 @@
-Struct dds_sequence
-===================
-
-.. doxygenstruct:: dds_sequence
-   :project: ddsc_api_docs

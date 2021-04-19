@@ -1,5 +1,0 @@
-File dds_public_impl.h
-======================
-
-.. doxygenfile:: dds_public_impl.h
-   :project: ddsc_api_docs

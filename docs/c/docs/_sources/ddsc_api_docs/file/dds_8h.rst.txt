@@ -1,5 +1,0 @@
-File dds.h
-==========
-
-.. doxygenfile:: dds.h
-   :project: ddsc_api_docs

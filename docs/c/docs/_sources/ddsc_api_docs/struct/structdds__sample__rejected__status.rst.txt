@@ -1,5 +1,0 @@
-Struct dds_sample_rejected_status
-=================================
-
-.. doxygenstruct:: dds_sample_rejected_status
-   :project: ddsc_api_docs

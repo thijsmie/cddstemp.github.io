@@ -1,5 +1,0 @@
-Union dds_topic_filter_function_union
-=====================================
-
-.. doxygenunion:: dds_topic_filter_function_union
-   :project: ddsc_api_docs

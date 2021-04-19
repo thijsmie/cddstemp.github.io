@@ -1,5 +1,0 @@
-Struct dds_inconsistent_topic_status
-====================================
-
-.. doxygenstruct:: dds_inconsistent_topic_status
-   :project: ddsc_api_docs

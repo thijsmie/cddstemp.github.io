@@ -1,5 +1,0 @@
-Struct dds_subscription_matched_status
-======================================
-
-.. doxygenstruct:: dds_subscription_matched_status
-   :project: ddsc_api_docs

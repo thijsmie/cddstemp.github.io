@@ -1,5 +1,0 @@
-Struct dds_sample_lost_status
-=============================
-
-.. doxygenstruct:: dds_sample_lost_status
-   :project: ddsc_api_docs

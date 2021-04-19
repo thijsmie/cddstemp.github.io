@@ -1,5 +1,0 @@
-Struct dds_topic_descriptor
-===========================
-
-.. doxygenstruct:: dds_topic_descriptor
-   :project: ddsc_api_docs

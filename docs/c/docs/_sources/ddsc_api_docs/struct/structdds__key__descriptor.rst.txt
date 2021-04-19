@@ -1,5 +1,0 @@
-Struct dds_key_descriptor
-=========================
-
-.. doxygenstruct:: dds_key_descriptor
-   :project: ddsc_api_docs

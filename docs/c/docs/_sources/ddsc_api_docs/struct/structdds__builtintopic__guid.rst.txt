@@ -1,5 +1,0 @@
-Struct dds_builtintopic_guid
-============================
-
-.. doxygenstruct:: dds_builtintopic_guid
-   :project: ddsc_api_docs

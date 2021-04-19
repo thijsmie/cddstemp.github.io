@@ -1,5 +1,0 @@
-Struct dds_liveliness_lost_status
-=================================
-
-.. doxygenstruct:: dds_liveliness_lost_status
-   :project: ddsc_api_docs

@@ -1,5 +1,0 @@
-File dds_public_qos.h
-=====================
-
-.. doxygenfile:: dds_public_qos.h
-   :project: ddsc_api_docs
