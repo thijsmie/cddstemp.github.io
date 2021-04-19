@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds_8h_1ab32ed578e469bda4ff3ee8c247281806:
+
+Typedef dds_topic_filter_arg_fn
+===============================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_dds.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_topic_filter_arg_fn

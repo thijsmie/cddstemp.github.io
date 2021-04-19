@@ -1,0 +1,20 @@
+.. _dir___work_1_s_src_core_ddsc_include:
+
+
+Directory include
+=================
+
+
+|exhale_lsh| :ref:`Parent directory <dir___work_1_s_src_core_ddsc>` (``/_work/1/s/src/core/ddsc``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``/_work/1/s/src/core/ddsc/include``
+
+Subdirectories
+--------------
+
+- :ref:`dir___work_1_s_src_core_ddsc_include_dds`
+
+
+

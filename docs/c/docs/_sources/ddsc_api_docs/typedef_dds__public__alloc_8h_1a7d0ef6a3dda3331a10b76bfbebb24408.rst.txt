@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds__public__alloc_8h_1a7d0ef6a3dda3331a10b76bfbebb24408:
+
+Typedef dds_allocator_t
+=======================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_alloc.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_allocator_t

@@ -1,0 +1,30 @@
+.. _dir___work_1_s_src_core_ddsc_include_dds_ddsc:
+
+
+Directory ddsc
+==============
+
+
+|exhale_lsh| :ref:`Parent directory <dir___work_1_s_src_core_ddsc_include_dds>` (``/_work/1/s/src/core/ddsc/include/dds``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``/_work/1/s/src/core/ddsc/include/dds/ddsc``
+
+
+Files
+-----
+
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_internal_api.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_opcodes.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_alloc.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_error.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_impl.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_listener.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_qos.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_qosdefs.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_status.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_rhc.h`
+- :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_statistics.h`
+
+

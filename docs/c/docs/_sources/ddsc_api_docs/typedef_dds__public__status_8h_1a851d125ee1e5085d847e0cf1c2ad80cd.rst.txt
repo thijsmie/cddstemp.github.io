@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds__public__status_8h_1a851d125ee1e5085d847e0cf1c2ad80cd:
+
+Typedef dds_requested_incompatible_qos_status_t
+===============================================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_status.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_requested_incompatible_qos_status_t

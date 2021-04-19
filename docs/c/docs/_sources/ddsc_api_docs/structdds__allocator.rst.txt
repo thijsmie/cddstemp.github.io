@@ -1,0 +1,16 @@
+.. _exhale_struct_structdds__allocator:
+
+Struct dds_allocator
+====================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_alloc.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: dds_allocator
+   :members:
+   :protected-members:
+   :undoc-members:

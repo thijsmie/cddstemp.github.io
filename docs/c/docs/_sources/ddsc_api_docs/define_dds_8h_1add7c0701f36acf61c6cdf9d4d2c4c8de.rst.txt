@@ -1,0 +1,13 @@
+.. _exhale_define_dds_8h_1add7c0701f36acf61c6cdf9d4d2c4c8de:
+
+Define DDS_BUILTIN_TOPIC_DCPSSUBSCRIPTION
+=========================================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_dds.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: DDS_BUILTIN_TOPIC_DCPSSUBSCRIPTION

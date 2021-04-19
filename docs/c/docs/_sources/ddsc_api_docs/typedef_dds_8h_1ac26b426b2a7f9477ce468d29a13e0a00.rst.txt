@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds_8h_1ac26b426b2a7f9477ce468d29a13e0a00:
+
+Typedef dds_builtintopic_endpoint_t
+===================================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_dds.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_builtintopic_endpoint_t

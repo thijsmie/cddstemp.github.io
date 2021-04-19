@@ -1,0 +1,16 @@
+.. _dir___work_1_s_src:
+
+
+Directory src
+=============
+
+
+*Directory path:* ``/_work/1/s/src``
+
+Subdirectories
+--------------
+
+- :ref:`dir___work_1_s_src_core`
+
+
+

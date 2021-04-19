@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds__public__status_8h_1aae1c30d853d6eafa6187a6c77808c037:
+
+Typedef dds_liveliness_changed_status_t
+=======================================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_status.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_liveliness_changed_status_t

@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds__public__impl_8h_1aba983c6b797fbe8e495cdc28c97c3745:
+
+Typedef dds_find_scope_t
+========================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_impl.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_find_scope_t

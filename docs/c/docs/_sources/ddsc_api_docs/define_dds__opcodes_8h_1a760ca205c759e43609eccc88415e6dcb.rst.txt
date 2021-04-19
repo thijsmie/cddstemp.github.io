@@ -1,0 +1,13 @@
+.. _exhale_define_dds__opcodes_8h_1a760ca205c759e43609eccc88415e6dcb:
+
+Define DDS_OP_FLAG_KEY
+======================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_opcodes.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: DDS_OP_FLAG_KEY

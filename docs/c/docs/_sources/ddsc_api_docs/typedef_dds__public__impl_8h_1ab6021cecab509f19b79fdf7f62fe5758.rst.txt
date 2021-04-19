@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds__public__impl_8h_1ab6021cecab509f19b79fdf7f62fe5758:
+
+Typedef dds_entity_kind_t
+=========================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_impl.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_entity_kind_t

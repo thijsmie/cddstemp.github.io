@@ -13,6 +13,7 @@
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
 
   
   
@@ -32,6 +33,8 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -108,7 +111,6 @@
 <li class="toctree-l1"><a class="reference internal" href="helloworld_indepth.html">Hello World! in more detail</a></li>
 <li class="toctree-l1"><a class="reference internal" href="next_steps.html">What’s next?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uninstall.html">Uninstalling Eclipse Cyclone DDS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ddsc.html">Eclipse Cyclone DDS C API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../config.html">A guide to the configuration options of Eclipse Cyclone DDS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../security.html">DDS Security</a></li>
 </ul>
@@ -240,49 +242,6 @@ scope of this document.</p>
 <span id="cycloneddspackage"></span><h3>Hello World! CMake (CycloneDDS Package)<a class="headerlink" href="#hello-world-cmake-cyclonedds-package" title="Permalink to this headline">¶</a></h3>
 <p>Specifying how to build the <em>Hello World!</em> example requires only a few
 lines of configuration in <code class="code docutils literal notranslate"><span class="pre">examples/helloworld/CMakeLists.txt</span></code></p>
-<div class="highlight-cmake notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.5</span><span class="p">)</span>
-<span class="nb">project</span><span class="p">(</span><span class="s">helloworld</span> <span class="s">LANGUAGES</span> <span class="s">C</span><span class="p">)</span>
-
-<span class="c"># Find the CycloneDDS package. If it is not in a default location, try</span>
-<span class="c"># finding it relative to the example where it most likely resides.</span>
-<span class="nb">find_package</span><span class="p">(</span><span class="s">CycloneDDS</span> <span class="s">REQUIRED</span> <span class="s">COMPONENTS</span> <span class="s">idlc</span> <span class="s">PATHS</span> <span class="s2">&quot;${CMAKE_CURRENT_SOURCE_DIR}/../../../..&quot;</span><span class="p">)</span>
-
-<span class="c"># This is a convenience function, provided by the CycloneDDS package,</span>
-<span class="c"># that will supply a library target related the the given idl file.</span>
-<span class="c"># In short, it takes the idl file, generates the source files with</span>
-<span class="c"># the proper data types and compiles them into a library.</span>
-<span class="nb">idlc_generate</span><span class="p">(</span><span class="s">HelloWorldData_lib</span> <span class="s2">&quot;HelloWorldData.idl&quot;</span><span class="p">)</span>
-
-<span class="c"># Both executables have only one related source file.</span>
-<span class="nb">add_executable</span><span class="p">(</span><span class="s">HelloworldPublisher</span> <span class="s">publisher.c</span><span class="p">)</span>
-<span class="nb">add_executable</span><span class="p">(</span><span class="s">HelloworldSubscriber</span> <span class="s">subscriber.c</span><span class="p">)</span>
-
-<span class="c"># Both executables need to be linked to the idl data type library and</span>
-<span class="c"># the ddsc API library.</span>
-<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">HelloworldPublisher</span> <span class="s">HelloWorldData_lib</span> <span class="s">CycloneDDS::ddsc</span><span class="p">)</span>
-<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">HelloworldSubscriber</span> <span class="s">HelloWorldData_lib</span> <span class="s">CycloneDDS::ddsc</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
 <p>It will try to find the <code class="code docutils literal notranslate"><span class="pre">CycloneDDS</span></code> CMake package. When it
 has found it, every path and dependencies are automatically set.
 After that, an application can use it without fuss. CMake will
@@ -311,7 +270,7 @@ directory in the <code class="code docutils literal notranslate"><span class="pr
 there, making our location <code class="code docutils literal notranslate"><span class="pre">examples/helloworld/build</span></code>.</p>
 <p>Here, we can let CMake configure the build environment for
 us by typing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">..</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="p">..</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -322,7 +281,7 @@ environments require that you supply a specific generator. For example, only
 project by default, resulting in linker errors. When generating a
 Visual Studio project keep in mind to append <strong>Win64</strong> to the generator.
 The example below shows how to generate a Visual Studio 2015 project.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">G</span> <span class="s2">&quot;Visual Studio 14 2015 Win64&quot;</span> <span class="o">..</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">-</span><span class="n">G</span> <span class="s">&quot;Visual Studio 14 2015 Win64&quot;</span> <span class="p">..</span>
 </pre></div>
 </div>
 </div>
@@ -342,14 +301,14 @@ this case).</p>
 <h3>Hello World! Build<a class="headerlink" href="#hello-world-build" title="Permalink to this headline">¶</a></h3>
 <p>After the configuration step, building the example is as easy
 as typing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="p">.</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>On Windows, it is likely that you have to supply the config
 of Visual Studio:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">config</span> <span class="s2">&quot;Release&quot;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">cmake</span> <span class="o">--</span><span class="n">build</span> <span class="p">.</span> <span class="o">--</span><span class="n">config</span> <span class="s">&quot;Release&quot;</span>
 </pre></div>
 </div>
 </div>

@@ -1,0 +1,13 @@
+.. _exhale_typedef_dds__public__qosdefs_8h_1a3656adc484ef5448cea98f395be2ae8d:
+
+Typedef dds_qos_policy_id_t
+===========================
+
+- Defined in :ref:`file___work_1_s_src_core_ddsc_include_dds_ddsc_dds_public_qosdefs.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: dds_qos_policy_id_t
